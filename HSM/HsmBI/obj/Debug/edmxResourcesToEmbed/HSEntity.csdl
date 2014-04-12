@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hsmdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="defaultcon" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Academy" EntityType="hsmdbModel.Academy" />
+    <EntitySet Name="Attendance" EntityType="hsmdbModel.Attendance" />
+    <EntitySet Name="Availability" EntityType="hsmdbModel.Availability" />
+    <EntitySet Name="ChoirParts" EntityType="hsmdbModel.ChoirParts" />
+    <EntitySet Name="ChoirSplits" EntityType="hsmdbModel.ChoirSplits" />
+    <EntitySet Name="CodeAlgorithm" EntityType="hsmdbModel.CodeAlgorithm" />
+    <EntitySet Name="Dues" EntityType="hsmdbModel.Dues" />
+    <EntitySet Name="Events" EntityType="hsmdbModel.Events" />
+    <EntitySet Name="FriendshipGroups" EntityType="hsmdbModel.FriendshipGroups" />
+    <EntitySet Name="Members" EntityType="hsmdbModel.Members" />
+    <EntitySet Name="MonthlyDues" EntityType="hsmdbModel.MonthlyDues" />
+    <EntitySet Name="NextOfKins" EntityType="hsmdbModel.NextOfKins" />
+    <EntitySet Name="Occupations" EntityType="hsmdbModel.Occupations" />
+    <EntitySet Name="Positions_History" EntityType="hsmdbModel.Positions_History" />
+    <EntitySet Name="Posts" EntityType="hsmdbModel.Posts" />
+    <EntitySet Name="States" EntityType="hsmdbModel.States" />
+    <EntitySet Name="Transactions" EntityType="hsmdbModel.Transactions" />
+    <EntitySet Name="UserProfile" EntityType="hsmdbModel.UserProfile" />
+    <EntitySet Name="webpages_Membership" EntityType="hsmdbModel.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="hsmdbModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="hsmdbModel.webpages_Roles" />
+    <EntitySet Name="vwMembersList_Birthday" EntityType="hsmdbModel.vwMembersList_Birthday" />
+    <EntitySet Name="vwMembersList_General" EntityType="hsmdbModel.vwMembersList_General" />
+    <AssociationSet Name="FK_Members_Academy" Association="hsmdbModel.FK_Members_Academy">
+      <End Role="Academy" EntitySet="Academy" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attendance_Events" Association="hsmdbModel.FK_Attendance_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Attendance" EntitySet="Attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attendance_Members" Association="hsmdbModel.FK_Attendance_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Attendance" EntitySet="Attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Availability" Association="hsmdbModel.FK_Members_Availability">
+      <End Role="Availability" EntitySet="Availability" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodeAlgorithm_ChoirParts" Association="hsmdbModel.FK_CodeAlgorithm_ChoirParts">
+      <End Role="ChoirParts" EntitySet="ChoirParts" />
+      <End Role="CodeAlgorithm" EntitySet="CodeAlgorithm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_ChoirParts" Association="hsmdbModel.FK_Members_ChoirParts">
+      <End Role="ChoirParts" EntitySet="ChoirParts" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Splits" Association="hsmdbModel.FK_Members_Splits">
+      <End Role="ChoirSplits" EntitySet="ChoirSplits" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Dues" Association="hsmdbModel.FK_Transactions_Dues">
+      <End Role="Dues" EntitySet="Dues" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Clubs" Association="hsmdbModel.FK_Members_Clubs">
+      <End Role="FriendshipGroups" EntitySet="FriendshipGroups" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Occupations" Association="hsmdbModel.FK_Members_Occupations">
+      <End Role="Occupations" EntitySet="Occupations" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_Posts" Association="hsmdbModel.FK_Members_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Members_States" Association="hsmdbModel.FK_Members_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="Members" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NextOfKins_Members" Association="hsmdbModel.FK_NextOfKins_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="NextOfKins" EntitySet="NextOfKins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transactions_Members" Association="hsmdbModel.FK_Transactions_Members">
+      <End Role="Members" EntitySet="Members" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonthlyDues_Transactions" Association="hsmdbModel.FK_MonthlyDues_Transactions">
+      <End Role="Transactions" EntitySet="Transactions" />
+      <End Role="MonthlyDues" EntitySet="MonthlyDues" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="hsmdbModel.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Academy">
+    <Key>
+      <PropertyRef Name="sn" />
+    </Key>
+    <Property Name="sn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LevelCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="LevelName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Academy" FromRole="Academy" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Attendance">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="TimeIn" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Events" Relationship="hsmdbModel.FK_Attendance_Events" FromRole="Attendance" ToRole="Events" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Attendance_Members" FromRole="Attendance" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Availability">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Availability" FromRole="Availability" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="ChoirParts">
+    <Key>
+      <PropertyRef Name="sn" />
+    </Key>
+    <Property Name="sn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Part" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CodeAlgorithm" Relationship="hsmdbModel.FK_CodeAlgorithm_ChoirParts" FromRole="ChoirParts" ToRole="CodeAlgorithm" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_ChoirParts" FromRole="ChoirParts" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="ChoirSplits">
+    <Key>
+      <PropertyRef Name="SplitId" />
+    </Key>
+    <Property Name="SplitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Splits" FromRole="ChoirSplits" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="CodeAlgorithm">
+    <Key>
+      <PropertyRef Name="sn" />
+    </Key>
+    <Property Name="sn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Part_id" Type="Int32" Nullable="false" />
+    <Property Name="LastNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChoirParts" Relationship="hsmdbModel.FK_CodeAlgorithm_ChoirParts" FromRole="CodeAlgorithm" ToRole="ChoirParts" />
+  </EntityType>
+  <EntityType Name="Dues">
+    <Key>
+      <PropertyRef Name="DueId" />
+    </Key>
+    <Property Name="DueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsMonthly" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Transactions" Relationship="hsmdbModel.FK_Transactions_Dues" FromRole="Dues" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Attendance" Relationship="hsmdbModel.FK_Attendance_Events" FromRole="Events" ToRole="Attendance" />
+  </EntityType>
+  <EntityType Name="FriendshipGroups">
+    <Key>
+      <PropertyRef Name="ClubId" />
+    </Key>
+    <Property Name="ClubId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Clubs" FromRole="FriendshipGroups" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="Application_id" Type="Int32" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OtherNames" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HomeAddress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OfficeAddress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Wedding" Type="DateTime" Precision="3" />
+    <Property Name="OccupationId" Type="Int32" Nullable="false" />
+    <Property Name="Nickname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChoirSplit_Id" Type="Int32" Nullable="false" />
+    <Property Name="AvailabilityId" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StateOfOriginId" Type="Int32" Nullable="false" />
+    <Property Name="LGA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RobeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PartId" Type="Int32" Nullable="false" />
+    <Property Name="JoinedOn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="HomeTown" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Friendship_Id" Type="Int32" Nullable="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Attendance_id" Type="Int32" />
+    <Property Name="Academy_Id" Type="Int32" />
+    <NavigationProperty Name="Academy" Relationship="hsmdbModel.FK_Members_Academy" FromRole="Members" ToRole="Academy" />
+    <NavigationProperty Name="Attendance" Relationship="hsmdbModel.FK_Attendance_Members" FromRole="Members" ToRole="Attendance" />
+    <NavigationProperty Name="Availability" Relationship="hsmdbModel.FK_Members_Availability" FromRole="Members" ToRole="Availability" />
+    <NavigationProperty Name="ChoirParts" Relationship="hsmdbModel.FK_Members_ChoirParts" FromRole="Members" ToRole="ChoirParts" />
+    <NavigationProperty Name="ChoirSplits" Relationship="hsmdbModel.FK_Members_Splits" FromRole="Members" ToRole="ChoirSplits" />
+    <NavigationProperty Name="FriendshipGroups" Relationship="hsmdbModel.FK_Members_Clubs" FromRole="Members" ToRole="FriendshipGroups" />
+    <NavigationProperty Name="Occupations" Relationship="hsmdbModel.FK_Members_Occupations" FromRole="Members" ToRole="Occupations" />
+    <NavigationProperty Name="Posts" Relationship="hsmdbModel.FK_Members_Posts" FromRole="Members" ToRole="Posts" />
+    <NavigationProperty Name="States" Relationship="hsmdbModel.FK_Members_States" FromRole="Members" ToRole="States" />
+    <NavigationProperty Name="NextOfKins" Relationship="hsmdbModel.FK_NextOfKins_Members" FromRole="Members" ToRole="NextOfKins" />
+    <NavigationProperty Name="Transactions" Relationship="hsmdbModel.FK_Transactions_Members" FromRole="Members" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="MonthlyDues">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" />
+    <Property Name="DateId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Transactions" Relationship="hsmdbModel.FK_MonthlyDues_Transactions" FromRole="MonthlyDues" ToRole="Transactions" />
+  </EntityType>
+  <EntityType Name="NextOfKins">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OtherNames" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Relationship" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="HomeAddress" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="OfficeAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_NextOfKins_Members" FromRole="NextOfKins" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Occupations">
+    <Key>
+      <PropertyRef Name="OccupationId" />
+    </Key>
+    <Property Name="OccupationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Occupations" FromRole="Occupations" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Positions_History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="member_id" Type="Int32" Nullable="false" />
+    <Property Name="Post_Id" Type="Int32" Nullable="false" />
+    <Property Name="DateResumed" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateVacated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_Posts" FromRole="Posts" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Members_States" FromRole="States" ToRole="Members" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DueId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dues" Relationship="hsmdbModel.FK_Transactions_Dues" FromRole="Transactions" ToRole="Dues" />
+    <NavigationProperty Name="Members" Relationship="hsmdbModel.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
+    <NavigationProperty Name="MonthlyDues" Relationship="hsmdbModel.FK_MonthlyDues_Transactions" FromRole="Transactions" ToRole="MonthlyDues" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_Roles" Relationship="hsmdbModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="hsmdbModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="vwMembersList_Birthday">
+    <Key>
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="Part" />
+      <PropertyRef Name="Split" />
+      <PropertyRef Name="Friendship_Group" />
+      <PropertyRef Name="MobileNo" />
+      <PropertyRef Name="eMail" />
+      <PropertyRef Name="SplitId" />
+      <PropertyRef Name="PartId" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="WeddingMonth" />
+      <PropertyRef Name="WeddingDay" />
+    </Key>
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="Fullname" Type="String" Nullable="false" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="Part" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Split" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Friendship_Group" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="eMail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SplitId" Type="Int32" Nullable="false" />
+    <Property Name="PartId" Type="Int32" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BirthMonth" Type="Int32" />
+    <Property Name="Wedding" Type="DateTime" Precision="3" />
+    <Property Name="WeddingMonth" Type="Int32" Nullable="false" />
+    <Property Name="WeddingDay" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwMembersList_General">
+    <Key>
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="Part" />
+      <PropertyRef Name="Split" />
+      <PropertyRef Name="Friendship_Group" />
+      <PropertyRef Name="MobileNo" />
+      <PropertyRef Name="eMail" />
+      <PropertyRef Name="MaritalStatus" />
+      <PropertyRef Name="SplitId" />
+      <PropertyRef Name="PartId" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="ClubId" />
+    </Key>
+    <Property Name="MemberId" Type="Int32" Nullable="false" />
+    <Property Name="Fullname" Type="String" Nullable="false" MaxLength="81" FixedLength="false" Unicode="false" />
+    <Property Name="Part" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Split" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Friendship_Group" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="eMail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SplitId" Type="Int32" Nullable="false" />
+    <Property Name="PartId" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ClubId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Members_Academy">
+    <End Type="hsmdbModel.Academy" Role="Academy" Multiplicity="0..1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Academy">
+        <PropertyRef Name="sn" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="Academy_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attendance_Events">
+    <End Type="hsmdbModel.Events" Role="Events" Multiplicity="1" />
+    <End Type="hsmdbModel.Attendance" Role="Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attendance_Members">
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="1" />
+    <End Type="hsmdbModel.Attendance" Role="Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Availability">
+    <End Type="hsmdbModel.Availability" Role="Availability" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Availability">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="AvailabilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodeAlgorithm_ChoirParts">
+    <End Type="hsmdbModel.ChoirParts" Role="ChoirParts" Multiplicity="1" />
+    <End Type="hsmdbModel.CodeAlgorithm" Role="CodeAlgorithm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChoirParts">
+        <PropertyRef Name="sn" />
+      </Principal>
+      <Dependent Role="CodeAlgorithm">
+        <PropertyRef Name="Part_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_ChoirParts">
+    <End Type="hsmdbModel.ChoirParts" Role="ChoirParts" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChoirParts">
+        <PropertyRef Name="sn" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="PartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Splits">
+    <End Type="hsmdbModel.ChoirSplits" Role="ChoirSplits" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChoirSplits">
+        <PropertyRef Name="SplitId" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="ChoirSplit_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Dues">
+    <End Type="hsmdbModel.Dues" Role="Dues" Multiplicity="1" />
+    <End Type="hsmdbModel.Transactions" Role="Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dues">
+        <PropertyRef Name="DueId" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="DueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Clubs">
+    <End Type="hsmdbModel.FriendshipGroups" Role="FriendshipGroups" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FriendshipGroups">
+        <PropertyRef Name="ClubId" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="Friendship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Occupations">
+    <End Type="hsmdbModel.Occupations" Role="Occupations" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupations">
+        <PropertyRef Name="OccupationId" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="OccupationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_Posts">
+    <End Type="hsmdbModel.Posts" Role="Posts" Multiplicity="0..1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Members_States">
+    <End Type="hsmdbModel.States" Role="States" Multiplicity="1" />
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="Members">
+        <PropertyRef Name="StateOfOriginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NextOfKins_Members">
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="1" />
+    <End Type="hsmdbModel.NextOfKins" Role="NextOfKins" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="NextOfKins">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transactions_Members">
+    <End Type="hsmdbModel.Members" Role="Members" Multiplicity="1" />
+    <End Type="hsmdbModel.Transactions" Role="Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonthlyDues_Transactions">
+    <End Type="hsmdbModel.Transactions" Role="Transactions" Multiplicity="1" />
+    <End Type="hsmdbModel.MonthlyDues" Role="MonthlyDues" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Transactions">
+        <PropertyRef Name="TransactionId" />
+      </Principal>
+      <Dependent Role="MonthlyDues">
+        <PropertyRef Name="TransactionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Type="hsmdbModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+    <End Type="hsmdbModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+  </Association>
+</Schema>

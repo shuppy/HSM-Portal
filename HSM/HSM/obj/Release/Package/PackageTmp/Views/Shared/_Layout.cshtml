@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+
+    <title>@ViewBag.Title - Healing Stream of God Portal</title>
+   <script src="../Scripts/excanvas.js"></script>
+     @Styles.Render("~/Content/bundlecss")
+    @Scripts.Render("~/bundles/jfirst")
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36057737-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <script src="../Scripts/less.min.js"></script>
+</head>
+<body class="">
+    
+    <!-- Main Container Fluid -->
+    <div class="container-fluid fluid menu-left" style="visibility:visible">
+
+        <!-- Top navbar -->
+        <div class="navbar main hidden-print">
+
+            <!-- Brand -->
+            
+            <a href="../" class="appbrand pull-left"><span>HSoG&reg; Portal - &copy; @DateTime.Now.Year  <span>v1</span></span></a>
+
+            <!-- Menu Toggle Button -->
+            <button type="button" class="btn btn-navbar">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <!-- // Menu Toggle Button END -->
+            <!-- Top Menu -->
+            <ul class="topnav pull-left tn1">
+
+                <li class="hidden-phone">
+
+                    <a class="glyphicons brightness_increase" href="../"><i></i>The Healing Streams of God.</a>
+                </li>
+
+            </ul>
+            <!-- // Top Menu END -->
+            <!-- Top Menu Right -->
+            <ul class="topnav pull-right">
+
+                <!-- Language menu -->
+                <li class="dropdown visible-abc">
+                    <ul class="dropdown-menu pull-right">
+
+                        <li class="dropdown submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2</a>
+                            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+                                <li class="dropdown submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
+                                    <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+                                        <li><a href="#">Level 2.1.1</a></li>
+                                        <li><a href="#">Level 2.1.2</a></li>
+                                        <li><a href="#">Level 2.1.3</a></li>
+                                        <li><a href="#">Level 2.1.4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
+                                    <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+                                        <li><a href="#">Level 2.2.1</a></li>
+                                        <li><a href="#">Level 2.2.2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="">Some option</a></li>
+                        <li><a href="">Some other option</a></li>
+                        <li><a href="">Other option</a></li>
+
+                    </ul>
+                </li>
+                <!-- // Dropdown END -->
+                <!-- Profile / Logout menu -->
+                <li class="account">
+                    <a data-toggle="dropdown" href="#" class="glyphicons logout lock"><span class="hidden-phone text">User Account</span><i></i></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="#" class="glyphicons cogwheel">Settings<i></i></a></li>
+                        <li class="highlight profile">
+                            <span>
+                                <span class="heading">Profile <a href="#" class="pull-right">edit</a></span>
+                                <span class="img"></span>
+                                <span class="details">
+                                    <a href="#">@Html.Partial("_LoginPartial")</a>
+                                    contact@tabslogistics.com
+                                </span>
+                                <span class="clearfix"></span>
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <a class="btn btn-default btn-mini pull-right" href="#">
+                                    @Html.Partial("_LoginPartial")
+                                </a>
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <!-- // Profile / Logout menu END -->
+
+            </ul>
+            <!-- // Top Menu Right END -->
+
+
+        </div>
+        <!-- Top navbar END -->
+        <!-- Sidebar menu & content wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar Menu -->
+            <div id="menu" class="hidden-phone hidden-print">
+
+                <!-- Scrollable menu wrapper with Maximum height -->
+                <div class="slim-scroll" data-scroll-height="800px">
+
+                    <!-- Sidebar Profile -->
+                    <span class="profile">
+                        <a class="img" href="#">
+                            <img src="../App_Themes/img/mrawesome.jpg" alt="User picture" />
+                        </a>
+                        <span>
+                            <strong>Welcome</strong>
+                            <a href="#" class="glyphicons right_arrow">
+                                <i>
+                                    @Html.Partial("_LoginPartial")
+                                </i>
+                            </a>
+                        </span>
+                    </span>
+                    <!-- // Sidebar Profile END -->
+                    <!-- Sidebar Mini Stats -->
+                    <!-- // Sidebar Mini Stats END -->
+                    <!-- Regular Size Menu -->
+                    <ul>
+
+
+                        <!-- Menu Regular Item -->
+                        <li class="glyphicons display active"><a href="#"><i>Dashboard</i></a></li>
+
+                        <!-- Components Submenu Level 1 -->
+                        <li class="hasSubmenu glyphicons tags">
+                            <a data-toggle="collapse" href="#menu_components"><i></i><span>AC Transactions</span></a>
+                            <ul class="collapse" id="menu_components">
+
+                                <!-- Components Submenu Level 2 -->
+                                <li class="">
+                                    <a href="gen ledger.aspx"><span>General Ledger</span></a>
+                                </li>
+                                <!-- // Components Submenu Level 2 END -->
+                                <!-- Components Submenu Regular Items
+                                <li class=""><a href="#" onclick="loadframe('Purchase.aspx')"><span>Purchase (Truck)</span></a></li>-->
+                                <li class=""><a href="#"><span>Purchase</span></a></li>
+                                <li class=""><a href="receivables.aspx"><span>Receivable</span></a></li>
+                                <li class=""><a href="Payables.aspx"><span>Payables</span></a></li>
+                                <li class=""><a href="#"><span>Repayments</span></a></li>
+                                <li class=""><a href="#"><span>Journals</span></a></li>
+                                <li class=""><a href="Transit Loss.aspx"><span>Transit Loss</span></a></li>
+                                <li class=""><a href="#"><span>Create Invoice</span></a></li>
+                                <li class=""><a href="#"><span>Loan Setup</span></a></li>
+                            </ul>
+                            <span class="count">8</span>
+                        </li>
+                        <!-- Components Submenu Level 1 END -->
+                        <!-- Landing Submenu Level 1 -->
+                        <li class="hasSubmenu">
+                            <a data-toggle="collapse" class="glyphicons edit" href="#menu_landing"><i></i><span>AC Management</span></a>
+                            <ul class="collapse" id="menu_landing">
+                                <li class=""><a href="Account Trans.aspx"><span>Account Transactions</span></a></li>
+                                <li class=""><a href="balance BF.aspx"><span>BF</span></a></li>
+
+                            </ul>
+                            <span class="count">2</span>
+                        </li>
+                        <!-- // Gallery Submenu Level 1 END -->
+                        <!-- Extra Submenu Level 1 -->
+                        <li class="hasSubmenu glyphicons coins">
+                            <a data-toggle="collapse" href="#menu_reports"><i></i><span>AC Reports</span></a>
+                            <ul class="collapse" id="menu_reports">
+                                <li class=""><a href="#"><span>Profit and Loss</span></a></li>
+                                <li class=""><a href="#"><span>Balance Sheet</span></a></li>
+                                <li class=""><a href="#"><span>Trial Balance</span></a></li>
+                                <li class=""><a href="#"><span>General Ledger</span></a></li>
+
+                                <li class=""><a href="cashflow.aspx"><span>Cashflow</span></a></li>
+                              
+                                <li class=""><a href="vwAccountHeads.aspx"><span>Nominal Ledger</span></a></li>
+                                <li class=""><a href="Credit Facilities.aspx"><span>Credit Facilities</span></a></li>
+                                <li class=""><a href="Invoice/choose invoice.aspx"><span>View Invoice</span></a></li>
+                                <li class=""><a href="invoice/Waybills.aspx"><span>view waybills</span></a></li>
+                            </ul>
+                            <span class="count">7</span>
+                        </li>
+                        <!-- // Extra Submenu Level 1 END -->
+                        <li class="hasSubmenu glyphicons settings">
+                            <a data-toggle="collapse" href="#menu_settings"><i></i><span>AC Settings</span></a>
+                            <ul class="collapse" id="menu_settings">
+                                <li class=""><a href="Account Items.aspx"><span>Account Items</span></a></li>
+                                <li class=""><a href="Nominal Ledger.aspx">Nominal Ledger</a> </li>
+                                <li class=""><a href="AcTypes.aspx"><span>Account Types</span></a></li>
+                            
+                                <li class=""><a href="balancesheetitem.aspx"><span>Balancesheet Items</span></a></li>
+                                <li class=""><a href="PLItems.aspx"><span>P/L Itmes</span></a></li>
+                                <li class=""><a href="Banking.aspx"><span>Banks</span></a></li>
+                              
+                                <li class=""><a href="create bank.aspx"><span>Add Bank</span></a></li>
+                                <li class=""><a href="Inventory Accounts.aspx"><span>Inventory Accounts</span></a></li>
+                                <li class=""><a href="client controlAC.aspx"><span>Client Control ACs</span></a></li>
+
+                            </ul>
+                            <span class="count">7</span>
+                        </li>
+                        <!-- Gallery Submenu Level 1 -->
+
+                    </ul>
+                    <div class="clearfix"></div>
+
+
+                </div>
+                <!-- // Scrollable Menu wrapper with Maximum Height END -->
+
+            </div>
+            <!-- // Sidebar Menu END -->
+            <!-- Content -->
+            <div id="content">
+                <!-- Filters -->
+                @RenderBody()
+
+                <!-- // Footer END -->
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+            <!-- // Main Container Fluid END -->
+            <!-- Modal Gallery -->
+            <div id="modal-gallery" class="modal modal-gallery hide fade hidden-print" tabindex="-1">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal">&times;</a>
+                    <h3 class="modal-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-image"></div>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+                    <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i>Previous</a>
+                    <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i>Slideshow</a>
+                    <a class="btn modal-download" target="_blank"><i class="icon-download"></i>Download</a>
+                </div>
+            </div>
+            <!-- // Modal Gallery END -->
+
+        </div>
+        @*<script type="text/javascript" src="../Scripts/jsapi"></script>*@
+        @Scripts.Render("~/bundles/jquery")
+        <script src="~/Scripts/jsoncalls.1.js"></script>
+        @RenderSection("scripts", required: false )
+        <!-- Global -->
+        <script>
+            var basePath = '../Content/';
+        </script>
+
+        <!-- Colors -->
+        <script>
+            var primaryColor = '#e25f39',
+                dangerColor = '#bd362f',
+                successColor = '#609450',
+                warningColor = '#ab7a4b',
+                inverseColor = '#45484d';
+        </script>
+
+        <!-- Themer -->
+        <script>
+            var themerPrimaryColor = primaryColor;
+        </script>
+        
+
+       
+    </div>
+
+        @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            
+            <hr />
+            
+        </div>*@
+
+       
+</body>
+</html>
