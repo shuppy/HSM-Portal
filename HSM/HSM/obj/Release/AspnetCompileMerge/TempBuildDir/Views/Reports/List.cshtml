@@ -2,9 +2,14 @@
 
 @{
     ViewBag.Title = "List";
-    Layout = "~/Views/Shared/_Reports.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+    <li class="active">Alphabetical List</li>
+</ol>
+<hr />
 <h2>Choir List</h2>
 
 <div class="row">

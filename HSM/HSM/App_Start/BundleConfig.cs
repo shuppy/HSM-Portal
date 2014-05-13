@@ -34,7 +34,8 @@ namespace HSM
             //bundles.Add(new ScriptBundle("~/bundles/jfirst").Include(
             //            "~/Scripts/jquery-2.1.0.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/jfirst").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery.min.js","~/Scripts/jquery-ui-1.9.2.custom.min.js"
+                        ));
 
             //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
             //          "~/Scripts/bootstrap.js",
@@ -66,6 +67,24 @@ namespace HSM
                       "~/Content/prettify.css",
                       "~/Content/bootstrap-image-gallery.min.css",
                       "~/Content/style-dark.css","~/live.less.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bracket").Include(
+                "~/Content/bracketcss.css"));
+            bundles.Add(new ScriptBundle("~/bundles/bracket").Include(
+                "~/Scripts/jquery-2.1.0.js",
+                "~/Scripts/jquery-ui.1.10.4.min.js",
+                "~/Scripts/jquery.hotkeys.js",
+                "~/Scripts/bloodhound.js",
+             "~/Scripts/typeahead.jquery.js",
+             "~/Scripts/jquery-migrate-1.2.1.min.js",
+             "~/Scripts/bootstrap.min.js",
+             "~/Scripts/jquery.sparkline.min.js",
+             "~/Scripts/toggles.min.js",
+             "~/Scripts/retina.min.js",
+             "~/Scripts/jquery.cookies.js",
+             "~/Scripts/bracketcustom.js",
+             "~/Scripts/tao.ui.min.js",
+             "~/Scripts/jsoncalls.js"));
         }
     }
 }

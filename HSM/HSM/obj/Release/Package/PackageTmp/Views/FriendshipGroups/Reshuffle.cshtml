@@ -2,13 +2,13 @@
 
 @{
     ViewBag.Title = "Reshuffle";
-    Layout = "~/Views/Shared/_Friendships.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <ol class="breadcrumb">
     <li><a href="../../">Home</a></li>
     <li><a href="../Members/">Membership</a> </li>
-    <li>Splits</li>
+    <li>Splits Management</li>
     <li class="active">Reshuffle</li>
 </ol>
 <hr />
@@ -20,7 +20,25 @@
                 <div class="innerAll">
                     <div class="form-horizontal">
 
-                        <div class="row">
+                        <div class="row" >
+                            <div class="innerAll">
+                                @using (Html.BeginForm("filterpart", "FriendshipGroups"))
+                                {
+                                    <div class="col-md-6">
+                                        <label for="parts" class="control-label col-sm-4">Parts</label>
+                                        <div class="col-md-7">
+                                            @Html.DropDownList("parts", ViewBag.Parts as SelectList, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <input type="submit" value="filter by part..." class="btn btn-sm btn-active" />
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        
+                        <div class="row" hidden="hidden">
                             <div class="innerAll">
                                 @using (Html.BeginForm("filterclub", "FriendshipGroups"))
                                 {
@@ -42,15 +60,19 @@
                             <div class="innerAll" >
                                 @using (Html.BeginForm("filtername", "FriendshipGroups"))
                                 {
-                                    <div class="col-md-6">
-                                        <label for="names" class="control-label col-sm-4">Filter name</label>
-                                        <div class="col-md-7">
-                                            @Html.DropDownList("names", ViewBag.Members as SelectList, new { @class = "form-control" })
+                                    <div class="form-horizontal" >
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label for="name" class="control-label col-sm-4">Filter name</label>
+                                                <div class="col-md-7">
+                                                    <input class="form-control" id="name" name="name" type="text" placeholder="Member's name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <input type="submit" value="filter by name..." class="btn btn-sm btn-active" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <input type="submit" value="filter by name..." class="btn btn-sm btn-active" />
                                     </div>
                                 }
                             </div>

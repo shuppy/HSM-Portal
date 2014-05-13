@@ -2,19 +2,25 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Friendships.cshtml";
+    Layout = "~/Views/Shared/_layout.cshtml";
 }
-
-<h2>Index</h2>
+<ol class="breadcrumb">
+    <li><a href="../../">Home</a></li>
+    <li><a href="../Members/">Membership</a> </li>
+    <li>Friendship Groups</li>
+    <li class="active">Edit</li>
+</ol>
+<hr />
+<h2>Friendship Groups</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-hover table-responsive" >
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Code)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
@@ -23,9 +29,9 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Code)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>

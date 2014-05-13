@@ -26,5 +26,11 @@ namespace HSM.Controllers
 
             return View();
         }
+
+        public ActionResult coders()
+        {
+            ViewBag.Message = "Those guys.";
+            return View();
+        }
     }
 }

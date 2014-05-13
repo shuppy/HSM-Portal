@@ -20,7 +20,6 @@ namespace HsmBI
         }
     
         public int ClubId { get; set; }
-        public string Code { get; set; }
         public string Description { get; set; }
     
         public virtual ICollection<Members> Members { get; set; }

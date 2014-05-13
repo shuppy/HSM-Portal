@@ -2,15 +2,20 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Splits.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+<ol class="breadcrumb">
+    <li><a href="../../">Home</a></li>
+    <li>@Html.ActionLink("Choir Splits", "Index", "ChoirSplits") </li>
+    <li class="active">List</li>
+</ol>
+<hr />
+<h2>Choir Splits</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-responsive table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Description)

@@ -9,12 +9,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
 
-    <title>@ViewBag.Title - Healing Stream of God Portal</title>
-   <script src="../Scripts/excanvas.js"></script>
-     @Styles.Render("~/Content/bundlecss")
-    @Scripts.Render("~/bundles/jfirst")
+    <title>@ViewBag.Title - Healing Streams of God Portal</title>
+   <script src="~/Scripts/excanvas.js"></script>
+  
+    <link href="~/Content/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/glyphicons.css" rel="stylesheet" />
+    <link href="~/Content/uniform.default.css" rel="stylesheet" />
+    <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/jasny-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-toggle-buttons.css" rel="stylesheet" />
+    <link href="~/Content/select2.css" rel="stylesheet" />
+    <link href="~/Content/datetimepicker.css" rel="stylesheet" />
+    <link href="~/Content/jquery.miniColors.css" rel="stylesheet" />
+    <link href="~/Content/jquery.notyfy.css" rel="stylesheet" />
+    <link href="~/Content/default.css" rel="stylesheet" />
+    <link href="~/Content/jquery.gritter.css" rel="stylesheet" />
+    <link href="~/Content/jquery.easy-pie-chart.css" rel="stylesheet" />
+    <link href="~/Content/prettify.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-image-gallery.min.css" rel="stylesheet" />
+    <link href="~/Content/style-dark.css" rel="stylesheet" />
+    <link href="~/Content/live.less.css" rel="stylesheet" />
 
+    @*"~/Content/bootstrap.min.css",
+    "~/Content/responsive.css",
+    "~/Content/glyphicons.css",
+    "~/Content/uniform.default.css",
+    "~/Content/prettyPhoto.css",
+    "~/Content/excanvas.css",
+    "~/Content/jasny-bootstrap.min.css",
+    "~/Content/jasny-bootstrap-responsive.min.css",
+    "~/Content/bootstrap-wysihtml5-0.0.2.css",
+    "~/Content/bootstrap-select.css",
+    "~/Content/bootstrap-toggle-buttons.css",
+    "~/Content/select2.css",
+    "~/Content/datetimepicker.css",
+    "~/Content/jquery-ui-1.9.2.custom.min.css",
+    "~/Content/jquery.miniColors.css",
+    "~/Content/jquery.notyfy.css",
+    "~/Content/default.css",
+    "~/Content/jquery.gritter.css",
+    "~/Content/jquery.easy-pie-chart.css",
+    "~/Content/prettify.css",
+    "~/Content/bootstrap-image-gallery.min.css",
+    "~/Content/style-dark.css","~/live.less.css"*@
 
+    <script src="~/Scripts/jquery.min.js"></script>
     <!-- Google Analytics -->
     <script type="text/javascript">
 
@@ -30,7 +74,7 @@
 
     </script>
 
-    <script src="../Scripts/less.min.js"></script>
+    <script src="~/Scripts/less.min.js"></script>
 </head>
 <body class="">
     
@@ -63,37 +107,7 @@
             <ul class="topnav pull-right">
 
                 <!-- Language menu -->
-                <li class="dropdown visible-abc">
-                    <ul class="dropdown-menu pull-right">
-
-                        <li class="dropdown submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2</a>
-                            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-                                <li class="dropdown submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
-                                    <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-                                        <li><a href="#">Level 2.1.1</a></li>
-                                        <li><a href="#">Level 2.1.2</a></li>
-                                        <li><a href="#">Level 2.1.3</a></li>
-                                        <li><a href="#">Level 2.1.4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown submenu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
-                                    <ul class="dropdown-menu submenu-show submenu-hide pull-left">
-                                        <li><a href="#">Level 2.2.1</a></li>
-                                        <li><a href="#">Level 2.2.2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li><a href="">Some option</a></li>
-                        <li><a href="">Some other option</a></li>
-                        <li><a href="">Other option</a></li>
-
-                    </ul>
-                </li>
+                
                 <!-- // Dropdown END -->
                 <!-- Profile / Logout menu -->
                 <li class="account">
@@ -106,7 +120,7 @@
                                 <span class="img"></span>
                                 <span class="details">
                                     <a href="#">@Html.Partial("_LoginPartial")</a>
-                                    contact@tabslogistics.com
+                                    contact@healingstreams.com
                                 </span>
                                 <span class="clearfix"></span>
                             </span>
@@ -140,7 +154,7 @@
                     <!-- Sidebar Profile -->
                     <span class="profile">
                         <a class="img" href="#">
-                            <img src="../App_Themes/img/mrawesome.jpg" alt="User picture" />
+                           
                         </a>
                         <span>
                             <strong>Welcome</strong>
@@ -156,86 +170,55 @@
                     <!-- // Sidebar Mini Stats END -->
                     <!-- Regular Size Menu -->
                     <ul>
-
-
                         <!-- Menu Regular Item -->
-                        <li class="glyphicons display active"><a href="#"><i>Dashboard</i></a></li>
-
+                        
                         <!-- Components Submenu Level 1 -->
-                        <li class="hasSubmenu glyphicons tags">
-                            <a data-toggle="collapse" href="#menu_components"><i></i><span>AC Transactions</span></a>
-                            <ul class="collapse" id="menu_components">
-
-                                <!-- Components Submenu Level 2 -->
-                                <li class="">
-                                    <a href="gen ledger.aspx"><span>General Ledger</span></a>
-                                </li>
-                                <!-- // Components Submenu Level 2 END -->
-                                <!-- Components Submenu Regular Items
-                                <li class=""><a href="#" onclick="loadframe('Purchase.aspx')"><span>Purchase (Truck)</span></a></li>-->
-                                <li class=""><a href="#"><span>Purchase</span></a></li>
-                                <li class=""><a href="receivables.aspx"><span>Receivable</span></a></li>
-                                <li class=""><a href="Payables.aspx"><span>Payables</span></a></li>
-                                <li class=""><a href="#"><span>Repayments</span></a></li>
-                                <li class=""><a href="#"><span>Journals</span></a></li>
-                                <li class=""><a href="Transit Loss.aspx"><span>Transit Loss</span></a></li>
-                                <li class=""><a href="#"><span>Create Invoice</span></a></li>
-                                <li class=""><a href="#"><span>Loan Setup</span></a></li>
-                            </ul>
-                            <span class="count">8</span>
+                        <li class="hasSubmenu">
+                            <a data-toggle="collapse" href="#members" class="glyphicons user"><i></i><span>Membership</span></a>
+                           <ul class="collapse" id="members">
+                               <li class="">@Html.ActionLink("Members List","Index","Members") </li>
+                               <li class="">@Html.ActionLink("Split Management","Reshuffle","ChoirSplits")</li>
+                               <li class="">@Html.ActionLink("Friendship Mgt.","Reshuffle","FriendshipGroups")</li>
+                           </ul>
+                            <span class="count">3</span>
                         </li>
                         <!-- Components Submenu Level 1 END -->
                         <!-- Landing Submenu Level 1 -->
-                        <li class="hasSubmenu">
-                            <a data-toggle="collapse" class="glyphicons edit" href="#menu_landing"><i></i><span>AC Management</span></a>
-                            <ul class="collapse" id="menu_landing">
-                                <li class=""><a href="Account Trans.aspx"><span>Account Transactions</span></a></li>
-                                <li class=""><a href="balance BF.aspx"><span>BF</span></a></li>
-
-                            </ul>
-                            <span class="count">2</span>
+                        <li class="hasSubmenu glyphicons fabric" >
+                            <a data-toggle="collapse" href="#wardrobe"><i></i><span>Wardrobe</span></a>
                         </li>
                         <!-- // Gallery Submenu Level 1 END -->
                         <!-- Extra Submenu Level 1 -->
-                        <li class="hasSubmenu glyphicons coins">
-                            <a data-toggle="collapse" href="#menu_reports"><i></i><span>AC Reports</span></a>
-                            <ul class="collapse" id="menu_reports">
-                                <li class=""><a href="#"><span>Profit and Loss</span></a></li>
-                                <li class=""><a href="#"><span>Balance Sheet</span></a></li>
-                                <li class=""><a href="#"><span>Trial Balance</span></a></li>
-                                <li class=""><a href="#"><span>General Ledger</span></a></li>
-
-                                <li class=""><a href="cashflow.aspx"><span>Cashflow</span></a></li>
-                              
-                                <li class=""><a href="vwAccountHeads.aspx"><span>Nominal Ledger</span></a></li>
-                                <li class=""><a href="Credit Facilities.aspx"><span>Credit Facilities</span></a></li>
-                                <li class=""><a href="Invoice/choose invoice.aspx"><span>View Invoice</span></a></li>
-                                <li class=""><a href="invoice/Waybills.aspx"><span>view waybills</span></a></li>
-                            </ul>
-                            <span class="count">7</span>
+                        <li class="hasSubmenu glyphicons coins"  >
+                            <a data-toggle="collapse" href="#finance"><i></i><span>Finance</span></a>
                         </li>
                         <!-- // Extra Submenu Level 1 END -->
-                        <li class="hasSubmenu glyphicons settings">
-                            <a data-toggle="collapse" href="#menu_settings"><i></i><span>AC Settings</span></a>
-                            <ul class="collapse" id="menu_settings">
-                                <li class=""><a href="Account Items.aspx"><span>Account Items</span></a></li>
-                                <li class=""><a href="Nominal Ledger.aspx">Nominal Ledger</a> </li>
-                                <li class=""><a href="AcTypes.aspx"><span>Account Types</span></a></li>
-                            
-                                <li class=""><a href="balancesheetitem.aspx"><span>Balancesheet Items</span></a></li>
-                                <li class=""><a href="PLItems.aspx"><span>P/L Itmes</span></a></li>
-                                <li class=""><a href="Banking.aspx"><span>Banks</span></a></li>
-                              
-                                <li class=""><a href="create bank.aspx"><span>Add Bank</span></a></li>
-                                <li class=""><a href="Inventory Accounts.aspx"><span>Inventory Accounts</span></a></li>
-                                <li class=""><a href="client controlAC.aspx"><span>Client Control ACs</span></a></li>
-
+                        <li class="hasSubmenu" >
+                            <a class="glyphicons stats" data-toggle="collapse" href="#reports"><i></i><span>Reports</span></a>
+                            <ul class="collapse" id="reports">
+                                <li class="">@Html.ActionLink("Members Report","Index","Reports")</li>
+                                @*<li class="">Financial Reports</li>
+                                <li class="">Wardrobe Reports</li>*@
+                                
+                            </ul>
+                            <span class="count">1</span>
+                        </li>
+                        <!-- Gallery Submenu Level 1 -->
+                        <li class="hasSubmenu" >
+                            <a data-toggle="collapse" href="#settings" class="glyphicons settings"><i></i><span>Settings</span></a>
+                            <ul class="collapse" id="settings">
+                                <li class="">@Html.ActionLink("Academy","Index","Academy")</li>
+                                <li class="">@Html.ActionLink("Choir Parts","Index","ChoirParts")</li>
+                                <li class="">@Html.ActionLink("Availability","Index","Availability")</li>
+                                <li class="">@Html.ActionLink("Choir Splits","Index","ChoirSplits")</li>
+                                <li class="">@Html.ActionLink("Friendship","Index","FriendshipGroups")</li>
+                                <li class="">@Html.ActionLink("Occupations", "Index", "Occupations")</li>
+                                <li class="">@Html.ActionLink("Positions", "Index", "Posts")</li>
                             </ul>
                             <span class="count">7</span>
                         </li>
-                        <!-- Gallery Submenu Level 1 -->
-
                     </ul>
+
                     <div class="clearfix"></div>
 
 
@@ -251,32 +234,65 @@
 
                 <!-- // Footer END -->
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                    <p>&copy; @DateTime.Now.Year - HSoG Portal</p>
                 </footer>
             </div>
-            <!-- // Main Container Fluid END -->
-            <!-- Modal Gallery -->
-            <div id="modal-gallery" class="modal modal-gallery hide fade hidden-print" tabindex="-1">
-                <div class="modal-header">
-                    <a class="close" data-dismiss="modal">&times;</a>
-                    <h3 class="modal-title"></h3>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-image"></div>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
-                    <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i>Previous</a>
-                    <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i>Slideshow</a>
-                    <a class="btn modal-download" target="_blank"><i class="icon-download"></i>Download</a>
-                </div>
-            </div>
-            <!-- // Modal Gallery END -->
+            
 
         </div>
         @*<script type="text/javascript" src="../Scripts/jsapi"></script>*@
-        @Scripts.Render("~/bundles/jquery")
-        <script src="~/Scripts/jsoncalls.1.js"></script>
+        @*@Scripts.Render("~/bundles/jfirst")
+        @Scripts.Render("~/bundles/jquery")*@
+        
+         <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="~/Scripts/jquery.ui.touch-punch.min.js"></script>
+        <script src="~/Scripts/modernizr-2.7.1.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+        <script src="~/Scripts/common.js"></script>
+        <script src="~/Scripts/holder.js"></script>
+        <script src="~/Scripts/jquery.uniform.min.js"></script>
+        <script src="~/Scripts/jquery.prettyPhoto.js"></script>
+        <script src="~/Scripts/bootstrap-select.js"></script>
+        <script src="~/Scripts/collapse.js"></script>
+        <script src="~/Scripts/twitter-bootstrap-hover-dropdown.min.js"></script>
+        <script src="~/Scripts/jquery.toggle.buttons.js"></script>
+        <script src="~/Scripts/jasny-bootstrap.min.js"></script>
+        <script src="~/Scripts/bootstrap-fileupload.js"></script>
+        <script src="~/Scripts/bootbox.js"></script>
+        <script src="~/Scripts/wysihtml5-0.3.0_rc2.min.js"></script>
+        <script src="~/Scripts/prettify.js"></script>
+        <script src="~/Scripts/jquery.gritter.min.js"></script>
+        <script src="~/Scripts/jquery.notyfy.js"></script>
+        <script src="~/Scripts/jquery.miniColors.js"></script>
+        <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/Scripts/jquery.cookie.js"></script>
+        <script src="~/Scripts/themer.js"></script>
+        <script src="~/Scripts/twitter.js"></script>
+        <script src="~/Scripts/jquery.easy-pie-chart.js"></script>
+        <script src="~/Scripts/jquery.sparkline.min.js"></script>
+        <script src="~/Scripts/jquery.ba-resize.js"></script>
+        <script src="~/Scripts/index.js"></script>
+        <script src="~/Scripts/jquery.flot.js"></script>
+        <script src="~/Scripts/jquery.flot.orderBars.js"></script>
+        <script src="~/Scripts/jquery.flot.pie.js"></script>
+        <script src="~/Scripts/jquery.flot.resize.js"></script>
+        <script src="~/Scripts/jquery.flot.selection.js"></script>
+        <script src="~/Scripts/jquery.flot.tooltip.js"></script>
+        <script src="~/Scripts/resizable.js"></script>
+        <script src="~/Scripts/load-image.min.js"></script>
+        <script src="~/Scripts/bootstrap-image-gallery.min.js"></script>
+
+        <script>
+            $('.hasSubmenu').click(function () {
+                $('.collapse').css('display', 'none');
+                $('.hasSubmenu').css('height', '39px');
+                $(this).css('height', 'auto');
+                $(this).find('.collapse').css('display', 'block');
+            });
+        </script>
+        
+        <script src="~/Scripts/jsoncalls.js"></script>
         @RenderSection("scripts", required: false )
         <!-- Global -->
         <script>
@@ -301,31 +317,7 @@
        
     </div>
 
-        @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            
-            <hr />
-            
-        </div>*@
+      
 
        
 </body>

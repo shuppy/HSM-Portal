@@ -1,0 +1,395 @@
+﻿@model HsmBI.Members
+
+@{
+    ViewBag.Title = Model.LastName;
+}
+
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Members", "Index", "members") </li>
+    <li class="active">Details</li>
+</ol>
+
+
+<div class="row" >
+    <section class="col-sm-4 col-md-4">
+        <div class="panel panel-default widget-photoday">
+            <div class="panel-body">
+                <div class="col-sm-12 col-md-12" style="height:40%; width:100%; margin-top:5px">
+                    <img src="~/Content/images/members.png" class="fitimage" alt="Member's Image">
+                </div>
+            <hr />
+                <div class="photo-details">
+
+                    <h4 >@Model.LastName.ToUpper()&nbsp;@Model.OtherNames</h4>
+                    <small >Current Position: <i class="icon icon-star-2"></i> @Model.Posts.Description</small>
+                    <small>Part: <i class="icon icon-bookmark"></i> @Model.ChoirParts.Part : <i class="icon icon-flow-branch"></i> @Model.ChoirSplits.Description</small>
+                    <small class="text-muted"><i class="fa fa-map-marker"></i> @Model.HomeAddress</small>
+                </div><!-- photo-details -->
+                <ul class="photo-meta">
+                    <li><span><i class="fa fa-phone"></i> @Model.MobileNo</span></li>
+                    <li><a href="#"><i class="fa fa-email"></i> @Model.EmailAddress</a></li>
+                </ul>
+            </div><!-- panel-body -->
+        </div>
+    </section>
+    <div class="col-sm-6 col-md-6">
+        <section class="panel-primary">
+            <div class="panel-heading">
+
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="media">
+                        <div class="media-body">
+                            <ul class="list-unstyled list-info">
+                                <li class="ng-binding">
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label>User name</label>
+                                    Lisa Doe
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-envelope"></span>
+                                    <label>Email</label>
+                                    name@example.com
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-home"></span>
+                                    <label>Address</label>
+                                    Street 123, Avenue 45, Country
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-earphone"></span>
+                                    <label>Contact</label>
+                                    (+012) 345 6789
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-flag"></span>
+                                    <label>Nationality</label>
+                                    Australia
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        Other details here (two panels)
+        <table class="dl-horizontal">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Application_id)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Application_id)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Code)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Code)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.LastName)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OtherNames)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.OtherNames)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Gender)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Birthday)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaritalStatus)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.MaritalStatus)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeAddress)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.HomeAddress)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OfficeAddress)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.OfficeAddress)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MobileNo)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.MobileNo)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.EmailAddress)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nationality)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Nationality)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Wedding)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Wedding)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nickname)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Nickname)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AvailabilityId)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.AvailabilityId)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remarks)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Remarks)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LGA)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.LGA)
+                </td>
+            </tr>
+
+            @*<tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Photo)
+                </td>
+            </tr>*@
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RobeNo)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.RobeNo)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.JoinedOn)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.JoinedOn)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HomeTown)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.HomeTown)
+                </td>
+            </tr>
+
+           
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Attendance_id)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Attendance_id)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Academy.LevelCode)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Academy.LevelCode)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChoirParts.Part)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.ChoirParts.Part)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChoirSplits.Description)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.ChoirSplits.Description)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FriendshipGroups.Description )
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.FriendshipGroups.Description )
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Occupations.Description)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Occupations.Description)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Posts.Description)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Posts.Description)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.States.Name)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.States.Name)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NextOfKins.LastName)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.NextOfKins.LastName)
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div>
+    <h4>Member Details</h4>
+	<hr />
+   
+    <div class="clearfix"></div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MemberId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

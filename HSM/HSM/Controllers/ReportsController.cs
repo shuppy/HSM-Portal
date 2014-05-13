@@ -70,6 +70,7 @@ namespace HSM.Controllers
                 akole = title
             });
         }
+        
         [HttpPost]
         public JsonResult getchoirbyname(string name)
         {
@@ -280,7 +281,7 @@ namespace HSM.Controllers
                     content +=
                    "<tbody>\n" +
                         "<tr>\n" +
-                   "        <td>" + itm.MemberId + "</td>\n" + //itm.EntryDate.ToString("dd-MMM-yyy HH:mm") see date formating here oo
+                   "        <td>" + itm.MemberId + "</td>\n" + 
                    "        <td>" + itm.Fullname + "</td>\n" +
                    "        <td>" + itm.Part + "</td>\n" +
                    "        <td>" + itm.Split + "</td>\n" +
@@ -1203,7 +1204,7 @@ namespace HSM.Controllers
 
             return View( db.vwMembersList_General.ToList());
         }
-
+         
         public ViewResult List(string alpha , int page = 1)
         {
             ViewData["currentPage"] = alpha ?? string.Empty;

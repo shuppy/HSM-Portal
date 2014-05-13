@@ -48,7 +48,6 @@ namespace HsmBI
         public Nullable<int> PostId { get; set; }
         public string HomeTown { get; set; }
         public int Friendship_Id { get; set; }
-        public byte[] Picture { get; set; }
         public Nullable<int> Attendance_id { get; set; }
         public Nullable<int> Academy_Id { get; set; }
     

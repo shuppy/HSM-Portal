@@ -26,5 +26,6 @@ namespace HsmBI
         public int PartId { get; set; }
         public string Gender { get; set; }
         public int ClubId { get; set; }
+        public string Photo { get; set; }
     }
 }

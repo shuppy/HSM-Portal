@@ -680,3 +680,50 @@ function formatJSONDate(jsondate) {
     var date = day + "/" + month + "/" + year
     return date;
 }
+
+//Members Controller
+var xhr;
+
+var searchMembers = function (q) {
+    if (xhr != null) xhr.abort();
+    xhr = $.ajax({
+        type: "POST",
+        url: "/members/search",
+        data: {
+            query: q,
+            page: $('#page').val(),
+            size: $('#size').val()
+        },
+        cache: false,
+        success: function (data) {
+            $("#tbl").html('');
+            $("#tbl").append(data.details);
+            $("#btmore").css('visibility', data.attrib);
+            $('#page').val(data.page)
+        },
+        complete: function () {
+        }
+    });
+}
+
+var loadMoreMembers = function (q) {
+    $('#btmore').html('Loading More Members...');
+    if (xhr != null) xhr.abort();
+    xhr = $.ajax({
+        type: "POST",
+        url: "/members/more",
+        data: {
+            page: $('#page').val(),
+            size: $('#size').val()
+        },
+        cache: false,
+        success: function (data) {
+            $("#tbl").append(data.details);
+            $("#btmore").css('visibility', data.attrib);
+            $('#page').val(data.page)
+        },
+        complete: function () {
+            $('#btmore').html('Load More Members');
+        }
+    });
+}

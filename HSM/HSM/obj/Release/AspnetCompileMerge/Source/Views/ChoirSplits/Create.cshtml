@@ -2,9 +2,14 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Splits.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<ol class="breadcrumb">
+    <li><a href="../../">Home</a></li>
+    <li>@Html.ActionLink("Choir Splits", "Index", "ChoirSplits") </li>
+    <li class="active">Create</li>
+</ol>
+<hr />
 <h2>Create</h2>
 
 

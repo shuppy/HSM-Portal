@@ -48,7 +48,7 @@ namespace HSM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include="ClubId,Code,Description")] FriendshipGroups friendshipgroups)
+        public async Task<ActionResult> Create([Bind(Include="ClubId,Description")] FriendshipGroups friendshipgroups)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace HSM.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include="ClubId,Code,Description")] FriendshipGroups friendshipgroups)
+        public async Task<ActionResult> Edit([Bind(Include="ClubId,Description")] FriendshipGroups friendshipgroups)
         {
             if (ModelState.IsValid)
             {
@@ -117,21 +117,27 @@ namespace HSM.Controllers
             return RedirectToAction("Index");
         }
 
-        public ViewResult Reshuffle(string club = "0", string member ="0")
+        public ViewResult Reshuffle(string club = "0", string member ="",string part="0")
         {
             
             ViewBag.Clubs = new SelectList(db.FriendshipGroups.OrderBy(g => g.Description), "ClubId", "Description");
-            ViewBag.Members = new SelectList(db.vwMembersList_General.OrderBy(m =>m.Fullname), "MemberId", "Fullname");
+          //  ViewBag.Members = new SelectList(db.vwMembersList_General.OrderBy(m =>m.Fullname), "MemberId", "Fullname");
+            ViewBag.Parts = new SelectList(db.ChoirParts.OrderBy(p => p.Part), "sn", "Part");
             //Check if to list all
             int nclub = string.IsNullOrEmpty(club) ? 0 : Convert.ToInt32(club);
-            int xname = string.IsNullOrEmpty(member) ? 0 : Convert.ToInt32(member);
+           // int xname = string.IsNullOrEmpty(member) ? 0 : Convert.ToInt32(member);
+            int xpart = string.IsNullOrEmpty(part) ? 0: Convert.ToInt32(part);
             var list = nclub == 0 ?
-                xname == 0 ?
+                member == "" ?
+                xpart == 0?
                 from m in db.vwMembersList_General
                 orderby m.Friendship_Group ,m.Fullname 
-                select m :
+                select m : 
+                from m in db.vwMembersList_General 
+                where m.PartId == xpart 
+                select m:
                 from m in db.vwMembersList_General
-                where m.MemberId == xname
+                where m.Fullname.Contains(member )
                 orderby m.Friendship_Group, m.Fullname
                 select m :
                     from m in db.vwMembersList_General
@@ -155,8 +161,18 @@ namespace HSM.Controllers
         public ActionResult filtername(FormCollection form)
         {
             //Get the club id
-            string name = form["names"].ToString(); //this will always return the value of the element
+            string name = form["name"].ToString(); //this will always return the value of the element
             return RedirectToAction("Reshuffle", "FriendshipGroups", new { member = name });
+        }
+
+        [HttpPost]
+        public ActionResult filterpart(FormCollection form)
+        {
+            /*get the part id : int part = Convert.ToInt32(form["parts"]); 
+            this will always return the value of the element */
+            int part = Convert.ToInt32(form["parts"]);
+            return RedirectToAction("Reshuffle", "FriendshipGroups", new { part = part });
+
         }
 
         [HttpPost]

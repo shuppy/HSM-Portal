@@ -2,13 +2,13 @@
 
 @{
     ViewBag.Title = "Choir List";
-    Layout = "~/Views/Shared/_Reports.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <ol class="breadcrumb">
-    <li><a href="~/">Home</a></li>
-    <li><a href="../Members/">Membership</a> </li>
-    <li>Reports</li>
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+    <li class="active">Main</li>
 </ol>
 <hr />
 <div class="row row-fluid fluid">
@@ -31,7 +31,8 @@
                     <a href="carousel" class="btn btn-success btn-sm" title="Carousel view">Carousel view</a>
                 </div>
                 <div class="col-md-2">
-                    <a href="List" class="btn btn-success btn-sm" title="Alphabetical List of members">Alphabetical List</a>
+                    @Html.ActionLink("Alphabetical List", "List", "Reports", new { role = "button", @class = "btn btn-success btn-sm" })
+                   
                 </div>
                 <div class="col-md-2">
                     <button type="button" id="btnall" class="btn btn-default btn-sm" title="View all members, ordered by Part, Split, and fullname">View All</button>

@@ -2,11 +2,16 @@
 
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_Friendships.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<ol class="breadcrumb">
+    <li><a href="../../">Home</a></li>
+    <li><a href="../Members/">Membership</a> </li>
+    <li>Friendship Groups</li>
+    <li class="active">Edit</li>
+</ol>
+<hr />
 <h2>Edit</h2>
-
 
 @using (Html.BeginForm())
 {
@@ -18,13 +23,7 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ClubId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Code, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Code)
-                @Html.ValidationMessageFor(model => model.Code)
-            </div>
-        </div>
+      
 
         <div class="form-group">
             @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })

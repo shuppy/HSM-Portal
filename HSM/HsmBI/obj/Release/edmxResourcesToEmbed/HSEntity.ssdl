@@ -69,7 +69,6 @@
       <PropertyRef Name="ClubId" />
     </Key>
     <Property Name="ClubId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Code" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="Members">
@@ -104,7 +103,6 @@
     <Property Name="PostId" Type="int" />
     <Property Name="HomeTown" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="Friendship_Id" Type="int" Nullable="false" />
-    <Property Name="Picture" Type="image" />
     <Property Name="Attendance_id" Type="int" />
     <Property Name="Academy_Id" Type="int" />
   </EntityType>
@@ -265,6 +263,7 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
       <PropertyRef Name="PartId" />
       <PropertyRef Name="Gender" />
       <PropertyRef Name="ClubId" />
+      <PropertyRef Name="Photo" />
     </Key>
     <Property Name="MemberId" Type="int" Nullable="false" />
     <Property Name="Fullname" Type="varchar" MaxLength="81" Nullable="false" />
@@ -278,6 +277,7 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
     <Property Name="PartId" Type="int" Nullable="false" />
     <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
     <Property Name="ClubId" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_Attendance_Events">
     <End Role="Events" Type="Self.Events" Multiplicity="1" />
@@ -351,7 +351,7 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Members_Clubs">
+  <Association Name="FK_Members_FriendshipGroups">
     <End Role="FriendshipGroups" Type="Self.FriendshipGroups" Multiplicity="1" />
     <End Role="Members" Type="Self.Members" Multiplicity="*" />
     <ReferentialConstraint>
@@ -483,27 +483,6 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="getRelatedAvailability" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedClub" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedOccupation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedPart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="Part" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedPost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedSplit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="getRelatedState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-    <Parameter Name="desc" Type="varchar" Mode="In" />
-  </Function>
   <EntityContainer Name="hsmdbModelStoreContainer">
     <EntitySet Name="Academy" EntityType="Self.Academy" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
@@ -558,7 +537,8 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
     [vwMembersList_General].[SplitId] AS [SplitId], 
     [vwMembersList_General].[PartId] AS [PartId], 
     [vwMembersList_General].[Gender] AS [Gender], 
-    [vwMembersList_General].[ClubId] AS [ClubId]
+    [vwMembersList_General].[ClubId] AS [ClubId], 
+    [vwMembersList_General].[Photo] AS [Photo]
     FROM [dbo].[vwMembersList_General] AS [vwMembersList_General]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Attendance_Events" Association="Self.FK_Attendance_Events">
@@ -585,7 +565,7 @@ warning 6002: The table/view 'hsmdb.dbo.vwMembersList_General' does not have a p
       <End Role="ChoirParts" EntitySet="ChoirParts" />
       <End Role="Members" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK_Members_Clubs" Association="Self.FK_Members_Clubs">
+    <AssociationSet Name="FK_Members_FriendshipGroups" Association="Self.FK_Members_FriendshipGroups">
       <End Role="FriendshipGroups" EntitySet="FriendshipGroups" />
       <End Role="Members" EntitySet="Members" />
     </AssociationSet>
