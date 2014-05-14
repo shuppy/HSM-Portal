@@ -9,7 +9,7 @@ using HsmBI;
 
 namespace HSM.Controllers
 {
-    public class ReportsController : Controller
+    public class ReportController : Controller
     {
         defaultcon db = new defaultcon();
         // POST Methods
@@ -1190,7 +1190,7 @@ namespace HSM.Controllers
         // Now i got to face Friendship group.
 
         //
-        // GET: /Reports/
+        // GET: /Report/
         public ActionResult Index()
         {
             ViewBag.Splits = new SelectList(db.ChoirSplits.OrderBy(g => g.Description), "SplitId", "Description");
@@ -1227,21 +1227,21 @@ namespace HSM.Controllers
             return View(list.ToList());
         }
         //
-        // GET: /Reports/Details/5
+        // GET: /Report/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Reports/Create
+        // GET: /Report/Create
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /Reports/Create
+        // POST: /Report/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -1258,14 +1258,14 @@ namespace HSM.Controllers
         }
 
         //
-        // GET: /Reports/Edit/5
+        // GET: /Report/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         //
-        // POST: /Reports/Edit/5
+        // POST: /Report/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -1282,14 +1282,14 @@ namespace HSM.Controllers
         }
 
         //
-        // GET: /Reports/Delete/5
+        // GET: /Report/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
         //
-        // POST: /Reports/Delete/5
+        // POST: /Report/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

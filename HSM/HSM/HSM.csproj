@@ -207,7 +207,7 @@
     <Compile Include="Controllers\membersController.cs" />
     <Compile Include="Controllers\OccupationsController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
-    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -452,10 +452,10 @@
     <Content Include="Views\FriendshipGroups\Edit.cshtml" />
     <Content Include="Views\FriendshipGroups\Index.cshtml" />
     <Content Include="Views\ChoirSplits\Reshuffle.cshtml" />
-    <Content Include="Views\Reports\Index.cshtml" />
-    <Content Include="Views\Reports\List.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\List.cshtml" />
     <Content Include="Views\Shared\_Reports.cshtml" />
-    <Content Include="Views\Reports\Carousel.cshtml" />
+    <Content Include="Views\Report\Carousel.cshtml" />
     <Content Include="Views\FriendshipGroups\Reshuffle.cshtml" />
     <Content Include="Views\members\Create.cshtml" />
     <Content Include="Views\members\Delete.cshtml" />

@@ -1,6 +1,6 @@
 ﻿// retrieve memberslist - This is javascript for json calls. 
 // Will be used in most part of the app.
-// Friendship, Reports, Choirsplits
+// Friendship, Report, Choirsplits
 // Modifications needed for aborting the function
 // Thanks to Godwin - Woman wrapper.
 // April 2014
@@ -14,7 +14,7 @@ var allmembers = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getall",
+        url: "/Report/getall",
         data: {},
         cache: false,
         success: function (data) {
@@ -38,7 +38,7 @@ var membersbyname = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbyname",
+        url: "/Report/getchoirbyname",
         data: {
             name: $('#name').val()
         },
@@ -64,7 +64,7 @@ var membersbysplit = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbysplit",
+        url: "/Report/getchoirbysplit",
         data: {
             Split_Id: $('#ChoirSplit_Id').val()
         },
@@ -91,7 +91,7 @@ var membersbypart = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbypart",
+        url: "/Report/getchoirbypart",
         data: {
             Part_Id: $('#PartId').val()
         },
@@ -118,7 +118,7 @@ var membersbysplitnpart = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbysplitnpart",
+        url: "/Report/getchoirbysplitnpart",
         data: {
             part_id: $('#PartId').val(),
             split_id: $('#ChoirSplit_Id').val()
@@ -146,7 +146,7 @@ var membersbygender = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbygender",
+        url: "/Report/getchoirbygender",
         data: {
             gender: $('#gender').val()
         },
@@ -172,7 +172,7 @@ var membersbystatus = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbystatus",
+        url: "/Report/getchoirbystatus",
         data: {
             status: $('#status').val()
         },
@@ -199,7 +199,7 @@ var membersbysplitnstatus = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbysplitnstatus",
+        url: "/Report/getchoirbysplitnstatus",
         data: {
             status: $('#status').val(),
             split_id: $('#ChoirSplit_Id').val()
@@ -227,7 +227,7 @@ var membersbysplitngender = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbysplitngender",
+        url: "/Report/getchoirbysplitngender",
         data: {
             split_id: $('#ChoirSplit_Id').val(),
             gender: $('#gender').val()
@@ -255,7 +255,7 @@ var membersbypartnstatus = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbypartnstatus",
+        url: "/Report/getchoirbypartnstatus",
         data: {
             status: $('#status').val(),
             part_id: $('#PartId').val()
@@ -283,7 +283,7 @@ var membersbystatusngender = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbystatusngender",
+        url: "/Report/getchoirbystatusngender",
         data: {
             status: $('#status').val(),
             gender: $('#gender').val()
@@ -311,7 +311,7 @@ var membersbypartnsplitnstatus = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbypartnsplitnstatus",
+        url: "/Report/getchoirbypartnsplitnstatus",
         data: {
             part_id: $('#PartId').val(),
             split_id: $('#ChoirSplit_Id').val(),
@@ -340,7 +340,7 @@ var membersbysplitngendernstatus = function () {
     //Set properties of the json object
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/getchoirbysplitngendernstatus",
+        url: "/Report/getchoirbysplitngendernstatus",
         data: {
             split_id: $('#ChoirSplit_Id').val(),
             gender: $('#gender').val(),
@@ -367,7 +367,7 @@ var birthdaythismonth = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/birthdaybymonth",
+        url: "/Report/birthdaybymonth",
         data: {
             month: (new Date).getMonth()
         },
@@ -391,7 +391,7 @@ var birthdaybymonth = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/birthdaybymonth",
+        url: "/Report/birthdaybymonth",
         data: {
             month: $('#Months').val()
         },
@@ -416,7 +416,7 @@ var birthdaythisweek = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/birthdaythisweek",
+        url: "/Report/birthdaythisweek",
         data: {},
         cache: false,
         success: function (data) {
@@ -440,7 +440,7 @@ var birthdaytoday = function () {
     var date = formatJSONDate(new Date());
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/birthdaybydate",
+        url: "/Report/birthdaybydate",
         data: {
             date: date
         },
@@ -465,7 +465,7 @@ var birthdaybydate = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/birthdaybydate",
+        url: "/Report/birthdaybydate",
         data: {
             date: $('#date').val()
         },
@@ -490,7 +490,7 @@ var birthdaybydate = function () {
 
 //    searchobj = $.ajax({
 //        type: "POST",
-//        url: "/Reports/birthdaybydates",
+//        url: "/Report/birthdaybydates",
 //        data: {
 //            startdate: $('#startdate').val(),
 //            enddate: $('#enddate').val()
@@ -518,7 +518,7 @@ var weddingbymonth = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/weddingbymonth",
+        url: "/Report/weddingbymonth",
         data: {
             month: $('#wmonths').val()
         },
@@ -542,7 +542,7 @@ var weddingthismonth = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/weddingbymonth",
+        url: "/Report/weddingbymonth",
         data: {
             month: (new Date()).getMonth()
         },
@@ -566,7 +566,7 @@ var weddingthisweek = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/weddingthisweek",
+        url: "/Report/weddingthisweek",
         data: {},
         cache: false,
         success: function (data) {
@@ -590,7 +590,7 @@ var weddingtoday = function () {
     var date = formatJSONDate(new Date());
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/weddingbydate",
+        url: "/Report/weddingbydate",
         data: {
             date: date
         },
@@ -615,7 +615,7 @@ var weddingbydate = function () {
 
     searchobj = $.ajax({
         type: "POST",
-        url: "/Reports/weddingbydate",
+        url: "/Report/weddingbydate",
         data: {
             date: $('#wdate').val()
         },
