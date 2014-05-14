@@ -127,3 +127,4 @@ C:\Projects\hsog\HSM\bin\System.Web.WebPages.Razor.xml
 C:\Projects\hsog\HSM\obj\Debug\HSM.csprojResolveAssemblyReference.cache
 C:\Projects\hsog\HSM\obj\Debug\HSM.dll
 C:\Projects\hsog\HSM\obj\Debug\HSM.pdb
+C:\Projects\HSM Portal\HSM\HSM\bin\WebActivatorEx.dll

@@ -258,8 +258,9 @@ namespace HSM.Controllers
                     "        <h4>" + itm.Fullname + "</h4>\n" +
                     "        <p>" + string.Format("{0}, {1}", itm.MobileNo, itm.eMail) + "</p>\n" +
                     "        <p>\n" +
-                    "            <a href \"" + Url.Action("Edit", new { id = itm.MemberId }) + "\" class=\"btn btn-primary btn-xs\" role=\"button\">Edit</a>\n" +
-                    "            <a href \"" + Url.Action("Delete", new { id = itm.MemberId }) + "\" class=\"btn btn-danger btn-xs\" role=\"button\">Delete</a>\n" +
+                    "            <a href =\"" + @Url.Action("edit", new { id = itm.MemberId }) + "\" class=\"btn btn-primary btn-xs\" role=\"button\">Edit</a>\n" +
+                    "            <a href =\"" + @Url.Action("details", new {id = itm.MemberId }) + "\" class=\"btn btn-default btn-xs\" role=\"button\">Details</a>\n" +
+                    "            <a href =\"" + @Url.Action("delete", new {id = itm.MemberId })  + "\" class=\"btn btn-danger btn-xs\" role=\"button\">Delete</a>\n" +
                     "        </p>\n" +
                     "    </td>\n" +
                     "</tr>";

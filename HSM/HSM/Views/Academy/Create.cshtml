@@ -4,13 +4,18 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<ol class="breadcrumb">
-    <li><a href="../../">Home</a></li>
-    <li>@Html.ActionLink("Academy","Index","Academy") </li>
-    <li class="active">Edit</li>
-</ol>
-<hr />
-<h2>Create</h2>
+<div class="pageheader">
+    <h2><i class="icon icon-add-to-list"></i> Academy</h2>
+    <div class="breadcrumb-wrapper">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="~/">HSoG</a></li>
+            <li><a href="~/members/">Membership</a></li>
+            <li>Academy</li>
+            <li class="active">Create</li>
+        </ol>
+    </div>
+</div>
 
 @using (Html.BeginForm()) 
 {

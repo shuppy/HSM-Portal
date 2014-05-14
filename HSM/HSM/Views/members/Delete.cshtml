@@ -3,275 +3,156 @@
 @{
     ViewBag.Title = "Delete";
 }
-<ol class="breadcrumb">
-    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-    <li>@Html.ActionLink("Members", "Index", "members") </li>
-    <li class="active">Delete</li>
-</ol>
-<hr />
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Member</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Application_id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Application_id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OtherNames)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OtherNames)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Birthday)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Birthday)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MaritalStatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MaritalStatus)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomeAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.OfficeAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.OfficeAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MobileNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MobileNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nationality)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nationality)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Wedding)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Wedding)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nickname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nickname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AvailabilityId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AvailabilityId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Remarks)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Remarks)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LGA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LGA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RobeNo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RobeNo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.JoinedOn)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.JoinedOn)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HomeTown)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HomeTown)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Attendance_id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Attendance_id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Academy.LevelCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Academy.LevelCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChoirPart.Part)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChoirPart.Part)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChoirSplit.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChoirSplit.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FriendshipGroup.Code)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FriendshipGroup.Code)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Occupation.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Occupation.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Post.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Post.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.State.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.State.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NextOfKin.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NextOfKin.LastName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="pageheader">
+    <h2><i class="icon icon-cross" ></i> Delete - @Model.LastName&nbsp;@Model.OtherNames  </h2>
+    <div class="breadcrumb-wrapper">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="~/">HSoG</a></li>
+            <li><a href="~/members/">Membership</a></li>
+            <li class="active">Delete member</li>
+        </ol>
+    </div>
+</div>
+
+<section class="col-sm-10 col-md-4">
+    <div class="panel panel-default widget-photoday">
+        <div class="panel-body">
+            <div class="col-sm-12 col-md-12" style="height:40%; width:100%; margin-top:5px">
+                <img src="~/Content/images/members.png" class="fitimage" alt="Member's Image">
+            </div>
+            <hr />
+            <div class="photo-details">
+
+                <h4>@Model.LastName.ToUpper()&nbsp;@Model.OtherNames</h4>
+                <small>Current Position: <i class="icon icon-star-2"></i> @Model.Posts.Description</small>
+                <small>Part: <i class="icon icon-bookmark"></i> @Model.ChoirParts.Part : <i class="icon icon-music"></i> @Model.ChoirSplits.Description</small>
+                <small class="text-muted"><i class="fa fa-map-marker"></i> @Model.HomeAddress</small>
+            </div><!-- photo-details -->
+            <ul class="photo-meta">
+                <li><span><i class="fa fa-phone"></i> @Model.MobileNo</span></li>
+                <li><a href="#"><i class="fa fa-email"></i> @Model.EmailAddress</a></li>
+            </ul>
+        </div><!-- panel-body -->
+    </div>
+</section>
+<div class="col-sm-10 col-md-8">
+    <section class="panel panel-default">
+        <div class="panel-heading">
+           
+            <div class="panel-title">
+              Are you sure you want to delete this member? 
+                <div class="pull-right">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
         </div>
-    }
+        <div class="panel-body">
+            <div>
+                <div class="media">
+                    <div class="media-body">
+                        <ul class="list-unstyled list-info">
+                            <li class="ng-binding">
+                                <span class="icon glyphicon glyphicon-user"></span>
+                                <label>Gender:</label>
+                                @Model.Gender
+                            </li>
+                            <li>
+                                <span class="icon glyphicon glyphicon-calendar"></span>
+                                <label>Birthday:</label>
+                                @String.Format("{0:dd MMM}", @Model.Birthday)
+                            </li>
+                            <li>
+                                <span class="icon icon-heart"></span>
+                                <label>M. Status:</label>
+                                @Model.MaritalStatus
+                            </li>
+                            <li>
+                                <span class="icon glyphicon glyphicon-calendar"></span>
+                                <label>Wedding:</label>
+                                @String.Format("{0:dd-MMM-yyyy}", @Model.Wedding.GetValueOrDefault())
+                            </li>
+                            <li>
+                                <span class="icon icon-map-2"></span>
+                                <label>Home Town</label>
+                                @Model.HomeTown
+                            </li>
+                            <li>
+                                <span class="icon icon-map"></span>
+                                <label>LGA</label>
+                                @Model.LGA
+                            </li>
+                            <li>
+                                <span class="icon icon-earth"></span>
+                                <label>State:</label>
+                                @Model.States.Name
+                            </li>
+                            <li>
+                                <span class="icon glyphicon glyphicon-flag"></span>
+                                <label>Nationality</label>
+                                @Model.Nationality
+                            </li>
+                            <li>
+                                <span class="icon icon-briefcase"></span>
+                                <label>Occupation</label>
+                                @Model.Occupations.Description
+                            </li>
+                            <li>
+                                <span class="icon icon-map-marker"></span>
+                                <label>Office Address</label>
+                                @Model.OfficeAddress
+                            </li>
+                            <li>
+                                <span class="icon icon-calendar-2"></span>
+                                <label>Joined HSoG: </label>
+                                @Model.JoinedOn
+                            </li>
+                            <li>
+                                <span class="icon icon-user-2"></span>
+                                <label>Robe No</label>
+                                @Model.RobeNo
+                            </li>
+                            <li>
+                                <span class="icon icon-bar-chart"></span>
+                                <label>Availability:</label>
+                                @Model.Availability.Remark
+                            </li>
+                            <li>
+                                <span class="icon icon-bubbles-2"></span>
+                                <label>Friendship</label>
+                                @Model.FriendshipGroups.Description
+                            </li>
+                            <li>
+                                <span class="icon icon-signup"></span>
+                                <label>Academy</label>
+                                @Html.DisplayFor(model => model.Academy.LevelCode)
+                            </li>
+                            <li>
+                                <span class="icon icon-signout"></span>
+                                <label>Attendance Id</label>
+                                @Model.Attendance_id
+                            </li>
+
+                            <li>
+                                <span class="icon glyphicon glyphicon-link"></span>
+                                <label>Next of Kin:</label>
+                                @Model.NextOfKins
+                            </li>
+                            <li>
+                                <span class="icon glyphicon glyphicon-flag"></span>
+                                <label>Remark</label>
+                                @Model.Remarks
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
 </div>

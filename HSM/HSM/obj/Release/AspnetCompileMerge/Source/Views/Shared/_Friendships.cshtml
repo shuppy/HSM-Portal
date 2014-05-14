@@ -11,180 +11,120 @@
 
 
     <title>@ViewBag.Title - Healing Stream of God Portal</title>
-    <script src="~/Scripts/excanvas.js"></script>
-    @*Lets do manual link. I think the issue with the boudle css is the js, the js is trying to
-        locate the resources based on the location of the file. That is its not loading the resources linked to from the layout
-        its loading it as if the link to the resources originates from itself.
-        so when u have ../scripts/bootstrap.min.js in layout and the child form is not directly in
-        the same tree level with the boundle file, the referenced file will not be found.
-        the file will be interpreted as it is on the layout form ../scripts/bootstrap.min.js instead of ../..nsub/scripts/bootstrap.min.js*@
-    @Styles.Render("~/Content/bundlecss")
-    @*Include needed jscripts*@
-    @Scripts.Render("~/bundles/jfirst")
-
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-36057737-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
-    <script src="~/Scripts/less.min.js"></script>
+    @Styles.Render("~/Content/bracket")
+    @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body class="">
-    <!-- Main Container Fluid -->
-    <div class="container-fluid fluid menu-left" style="visibility:visible">
-
-        <!-- Top navbar -->
-        <div class="navbar main hidden-print">
-
-            <!-- Brand -->
-
-            <a href="../" class="appbrand pull-left"><span>HSoG&reg; Portal - &copy; @DateTime.Now.Year  <span>v1</span></span></a>
-
-            <!-- Menu Toggle Button -->
-            <button type="button" class="btn btn-navbar">
-                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <!-- // Menu Toggle Button END -->
-            <!-- Top Menu -->
-            <ul class="topnav pull-left tn1">
-
-                <li class="hidden-phone">
-
-                    <a class="glyphicons brightness_increase" href="../"><i></i>The Healing Streams of God.</a>
-                </li>
-
-            </ul>
-            <!-- // Top Menu END -->
-            <!-- Top Menu Right -->
-            <ul class="topnav pull-right">
-
-
-                <!-- Profile / Logout menu -->
-                <li class="account">
-                    <a data-toggle="dropdown" href="#" class="glyphicons logout lock"><span class="hidden-phone text">User Account</span><i></i></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="#" class="glyphicons cogwheel">Settings<i></i></a></li>
-                        <li class="highlight profile">
-                            <span>
-                                <span class="heading">Profile <a href="#" class="pull-right">edit</a></span>
-                                <span class="img"></span>
-                                <span class="details">
-                                    <a href="#">@Html.Partial("_LoginPartial")</a>
-                                    contact@domain.com
-                                </span>
-                                <span class="clearfix"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span>
-                                <a class="btn btn-default btn-mini pull-right" href="#">
-                                    @Html.Partial("_LoginPartial")
-                                </a>
-                            </span>
-                        </li>
-                    </ul>
-                </li>
-                <!-- // Profile / Logout menu END -->
-
-            </ul>
-            <!-- // Top Menu Right END -->
-
-
-        </div>
-        <!-- Top navbar END -->
-        <!-- Sidebar menu & content wrapper -->
-        <div id="wrapper">
-
-            <!-- Sidebar Menu -->
-            <div id="menu" class="hidden-phone hidden-print">
-
-                <!-- Scrollable menu wrapper with Maximum height -->
-                <div class="slim-scroll" data-scroll-height="800px">
-
-                    <!-- Sidebar Profile -->
-                    <span class="profile">
-                        
-                        <span>
-                            <strong>Welcome</strong>
-                            <a href="#" class="glyphicons right_arrow">
-                                <i>
-                                    @Html.Partial("_LoginPartial")
-                                </i>
-                            </a>
-                        </span>
-                    </span>
-                    <!-- // Sidebar Profile END -->
-                    <!-- Sidebar Mini Stats -->
-                    <!-- // Sidebar Mini Stats END -->
-                    <!-- Regular Size Menu -->
-                    <ul>
-
-
-                        <!-- Menu Regular Item -->
-                        <li class="glyphicons display active"> @Html.ActionLink("Friendship Club", "Index", "FriendshipGroups") </li>
-
-                        <li class=" glyphicons refresh"> @Html.ActionLink("Reshuffle", "Reshuffle", "FriendshipGroups")</li>
-
-                    </ul>
-                    <div class="clearfix"></div>
-
-
-                </div>
-                <!-- // Scrollable Menu wrapper with Maximum Height END -->
-
-            </div>
-            <!-- // Sidebar Menu END -->
-            <!-- Content -->
-            <div id="content">
-                <!-- Filters -->
-                @RenderBody()
-
-                <!-- // Footer END -->
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - HsoG&reg; - Healing Streams of God's Portal </p>
-                </footer>
-            </div>
-          
-
-        </div>
-        @*<script type="text/javascript" src="../Scripts/jsapi"></script>*@
-        @Scripts.Render("~/bundles/jquery")
-        <script src="~/Scripts/jsoncalls.js"></script>
-
-        @RenderSection("scripts", required: false)
-        <!-- Global -->
-        <script>
-            var basePath = '../Content/';
-        </script>
-
-        <!-- Colors -->
-        <script>
-            var primaryColor = '#e25f39',
-                dangerColor = '#bd362f',
-                successColor = '#609450',
-                warningColor = '#ab7a4b',
-                inverseColor = '#45484d';
-        </script>
-
-        <!-- Themer -->
-        <script>
-            var themerPrimaryColor = primaryColor;
-        </script>
-
-
-
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
+
+    <section>
+
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>{</span> HSoG <span>}</span></h1>
+            </div><!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <img alt="" src="images/photos/loggeduser.png" class="media-object">
+                        <div class="media-body">
+                            <h4>Welcome</h4>
+                            <span>"Life is so..."</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">Account</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <li><a href=""><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                        <li><a href=""><i class="fa fa-cog"></i> <span>Account Settings</span></a></li>
+                        <li><a href=""><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
+                        <li>@Html.Partial("_LoginPartial")</li>
+                    </ul>
+                </div>
+
+                <h5 class="sidebartitle">Navigation</h5>
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li><a ><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                    <li class="nav-parent nav-active active">
+                        <a href=""><i class="fa fa-users" ></i> <span>Membership</span></a>
+                        <ul class="children" style="display:block" >
+                            <li ><a href="~/Members/"><i class="fa fa-caret-right"></i> Members List</a></li>
+                            <li ><a href="~/ChoirSplits/Reshuffle/"><i class="fa fa-caret-right"></i> Split Management</a></li>
+                            <li ><a href="~/FriendshipGroups/Reshuffle/"><i class="fa fa-caret-right"></i> Friendship Mgt</a></li>
+                        </ul>
+                       
+                    </li>
+                    <li class="nav-parent">
+                        <a href=""><i class="icon icon-xing"></i> <span>Wardrobe</span></a>
+                    </li>
+                    <li><a href="tables.html"><i class="fa fa-briefcase" ></i> <span>Finance</span></a></li>
+                    <li><a href="maps.html"><i class="fa fa-map-marker"></i> <span>Maps</span></a></li>
+                    <li class="nav-parent">
+                        <a href=""><i class="icon icon-file-pdf"></i> <span>Reports</span></a>
+                        <ul class="children">
+                            <li><a href="~/Reports/"><i class="fa fa-caret-right"></i> Members' Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a href="layouts.html"><i class="icon icon-settings"></i> <span>Settings</span></a>
+                        <ul class="children">
+                            <li><a href="~/Academy/"><i class="fa fa-caret-right"></i> Academy</a></li>
+                            <li><a href="~/ChoirParts/"><i class="fa fa-caret-right"></i> Choir Parts</a></li>
+                            <li><a href="~/ChoirSplits/"><i class="fa fa-caret-right"></i> Choir Splits</a></li>
+                            <li><a href="~/Availability/"><i class="fa fa-caret-right"></i> Availability</a></li>
+                            <li><a href="~/FriendshipGroups/"><i class="fa fa-caret-right"></i> Friendship</a></li>
+                            <li><a href="~/Occupations/"><i class="fa fa-caret-right"></i> Occupations</a></li>
+                            <li><a href="~/Posts/"><i class="fa fa-caret-right"></i> Positions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+              
+
+            </div><!-- leftpanelinner -->
+        </div><!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+                <div class="header-left">
+                    <h4 style="padding-left:10px"> The Healing Streams of God, Daystar Christian Center.</h4>
+                </div>
+                <!-- header-right -->
+
+
+            </div><!-- headerbar -->
+           
+
+            <div class="contentpanel">
+                @RenderBody()
+                <hr />
+
+            </div>
+
+        </div><!-- mainpanel -->
+       
+        <footer class="clearfix">
+            <div class="pull-left">&copy; @DateTime.Now.Year - HSoG&reg; v3 - All rights Reserved. </div>
+            <div class="pull-right"><i class="icon icon-checkbox-checked"></i> M-i-N (Made In Nigeria) by - <a >Technical Team, The Healing Streams of God, Daystar Christian Center.</a>.</div>
+        </footer>
+    </section>
+
+    @Scripts.Render("~/bundles/bracket")
+
+    @RenderSection("scripts", required: false)
+
+
+
 
 
 </body>

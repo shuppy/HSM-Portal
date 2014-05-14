@@ -9,316 +9,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
 
-    <title>@ViewBag.Title - Healing Streams of God Portal</title>
-   <script src="~/Scripts/excanvas.js"></script>
-  
-    <link href="~/Content/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/responsive.css" rel="stylesheet" />
-    <link href="~/Content/glyphicons.css" rel="stylesheet" />
-    <link href="~/Content/uniform.default.css" rel="stylesheet" />
-    <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
-    <link href="~/Content/jasny-bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/jasny-bootstrap-responsive.min.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-select.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-toggle-buttons.css" rel="stylesheet" />
-    <link href="~/Content/select2.css" rel="stylesheet" />
-    <link href="~/Content/datetimepicker.css" rel="stylesheet" />
-    <link href="~/Content/jquery.miniColors.css" rel="stylesheet" />
-    <link href="~/Content/jquery.notyfy.css" rel="stylesheet" />
-    <link href="~/Content/default.css" rel="stylesheet" />
-    <link href="~/Content/jquery.gritter.css" rel="stylesheet" />
-    <link href="~/Content/jquery.easy-pie-chart.css" rel="stylesheet" />
-    <link href="~/Content/prettify.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-image-gallery.min.css" rel="stylesheet" />
-    <link href="~/Content/style-dark.css" rel="stylesheet" />
-    <link href="~/Content/live.less.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Healing Stream of God Portal</title>
+    @Styles.Render("~/Content/bracket")
+    @Scripts.Render("~/bundles/modernizr")
 
-    @*"~/Content/bootstrap.min.css",
-    "~/Content/responsive.css",
-    "~/Content/glyphicons.css",
-    "~/Content/uniform.default.css",
-    "~/Content/prettyPhoto.css",
-    "~/Content/excanvas.css",
-    "~/Content/jasny-bootstrap.min.css",
-    "~/Content/jasny-bootstrap-responsive.min.css",
-    "~/Content/bootstrap-wysihtml5-0.0.2.css",
-    "~/Content/bootstrap-select.css",
-    "~/Content/bootstrap-toggle-buttons.css",
-    "~/Content/select2.css",
-    "~/Content/datetimepicker.css",
-    "~/Content/jquery-ui-1.9.2.custom.min.css",
-    "~/Content/jquery.miniColors.css",
-    "~/Content/jquery.notyfy.css",
-    "~/Content/default.css",
-    "~/Content/jquery.gritter.css",
-    "~/Content/jquery.easy-pie-chart.css",
-    "~/Content/prettify.css",
-    "~/Content/bootstrap-image-gallery.min.css",
-    "~/Content/style-dark.css","~/live.less.css"*@
-
-    <script src="~/Scripts/jquery.min.js"></script>
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-36057737-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
-    <script src="~/Scripts/less.min.js"></script>
 </head>
 <body class="">
-    
-    <!-- Main Container Fluid -->
-    <div class="container-fluid fluid menu-left" style="visibility:visible">
-
-        <!-- Top navbar -->
-        <div class="navbar main hidden-print">
-
-            <!-- Brand -->
-            
-            <a href="../" class="appbrand pull-left"><span>HSoG&reg; Portal - &copy; @DateTime.Now.Year  <span>v1</span></span></a>
-
-            <!-- Menu Toggle Button -->
-            <button type="button" class="btn btn-navbar">
-                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <!-- // Menu Toggle Button END -->
-            <!-- Top Menu -->
-            <ul class="topnav pull-left tn1">
-
-                <li class="hidden-phone">
-
-                    <a class="glyphicons brightness_increase" href="../"><i></i>The Healing Streams of God.</a>
-                </li>
-
-            </ul>
-            <!-- // Top Menu END -->
-            <!-- Top Menu Right -->
-            <ul class="topnav pull-right">
-
-                <!-- Language menu -->
-                
-                <!-- // Dropdown END -->
-                <!-- Profile / Logout menu -->
-                <li class="account">
-                    <a data-toggle="dropdown" href="#" class="glyphicons logout lock"><span class="hidden-phone text">User Account</span><i></i></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="#" class="glyphicons cogwheel">Settings<i></i></a></li>
-                        <li class="highlight profile">
-                            <span>
-                                <span class="heading">Profile <a href="#" class="pull-right">edit</a></span>
-                                <span class="img"></span>
-                                <span class="details">
-                                    <a href="#">@Html.Partial("_LoginPartial")</a>
-                                    contact@healingstreams.com
-                                </span>
-                                <span class="clearfix"></span>
-                            </span>
-                        </li>
-                        <li>
-                            <span>
-                                <a class="btn btn-default btn-mini pull-right" href="#">
-                                    @Html.Partial("_LoginPartial")
-                                </a>
-                            </span>
-                        </li>
-                    </ul>
-                </li>
-                <!-- // Profile / Logout menu END -->
-
-            </ul>
-            <!-- // Top Menu Right END -->
-
-
-        </div>
-        <!-- Top navbar END -->
-        <!-- Sidebar menu & content wrapper -->
-        <div id="wrapper">
-
-            <!-- Sidebar Menu -->
-            <div id="menu" class="hidden-phone hidden-print">
-
-                <!-- Scrollable menu wrapper with Maximum height -->
-                <div class="slim-scroll" data-scroll-height="800px">
-
-                    <!-- Sidebar Profile -->
-                    <span class="profile">
-                        <a class="img" href="#">
-                           
-                        </a>
-                        <span>
-                            <strong>Welcome</strong>
-                            <a href="#" class="glyphicons right_arrow">
-                                <i>
-                                    @Html.Partial("_LoginPartial")
-                                </i>
-                            </a>
-                        </span>
-                    </span>
-                    <!-- // Sidebar Profile END -->
-                    <!-- Sidebar Mini Stats -->
-                    <!-- // Sidebar Mini Stats END -->
-                    <!-- Regular Size Menu -->
-                    <ul>
-                        <!-- Menu Regular Item -->
-                        
-                        <!-- Components Submenu Level 1 -->
-                        <li class="hasSubmenu">
-                            <a data-toggle="collapse" href="#members" class="glyphicons user"><i></i><span>Membership</span></a>
-                           <ul class="collapse" id="members">
-                               <li class="">@Html.ActionLink("Members List","Index","Members") </li>
-                               <li class="">@Html.ActionLink("Split Management","Reshuffle","ChoirSplits")</li>
-                               <li class="">@Html.ActionLink("Friendship Mgt.","Reshuffle","FriendshipGroups")</li>
-                           </ul>
-                            <span class="count">3</span>
-                        </li>
-                        <!-- Components Submenu Level 1 END -->
-                        <!-- Landing Submenu Level 1 -->
-                        <li class="hasSubmenu glyphicons fabric" >
-                            <a data-toggle="collapse" href="#wardrobe"><i></i><span>Wardrobe</span></a>
-                        </li>
-                        <!-- // Gallery Submenu Level 1 END -->
-                        <!-- Extra Submenu Level 1 -->
-                        <li class="hasSubmenu glyphicons coins"  >
-                            <a data-toggle="collapse" href="#finance"><i></i><span>Finance</span></a>
-                        </li>
-                        <!-- // Extra Submenu Level 1 END -->
-                        <li class="hasSubmenu" >
-                            <a class="glyphicons stats" data-toggle="collapse" href="#reports"><i></i><span>Reports</span></a>
-                            <ul class="collapse" id="reports">
-                                <li class="">@Html.ActionLink("Members Report","Index","Reports")</li>
-                                @*<li class="">Financial Reports</li>
-                                <li class="">Wardrobe Reports</li>*@
-                                
-                            </ul>
-                            <span class="count">1</span>
-                        </li>
-                        <!-- Gallery Submenu Level 1 -->
-                        <li class="hasSubmenu" >
-                            <a data-toggle="collapse" href="#settings" class="glyphicons settings"><i></i><span>Settings</span></a>
-                            <ul class="collapse" id="settings">
-                                <li class="">@Html.ActionLink("Academy","Index","Academy")</li>
-                                <li class="">@Html.ActionLink("Choir Parts","Index","ChoirParts")</li>
-                                <li class="">@Html.ActionLink("Availability","Index","Availability")</li>
-                                <li class="">@Html.ActionLink("Choir Splits","Index","ChoirSplits")</li>
-                                <li class="">@Html.ActionLink("Friendship","Index","FriendshipGroups")</li>
-                                <li class="">@Html.ActionLink("Occupations", "Index", "Occupations")</li>
-                                <li class="">@Html.ActionLink("Positions", "Index", "Posts")</li>
-                            </ul>
-                            <span class="count">7</span>
-                        </li>
-                    </ul>
-
-                    <div class="clearfix"></div>
-
-
-                </div>
-                <!-- // Scrollable Menu wrapper with Maximum Height END -->
-
-            </div>
-            <!-- // Sidebar Menu END -->
-            <!-- Content -->
-            <div id="content">
-                <!-- Filters -->
-                @RenderBody()
-
-                <!-- // Footer END -->
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - HSoG Portal</p>
-                </footer>
-            </div>
-            
-
-        </div>
-        @*<script type="text/javascript" src="../Scripts/jsapi"></script>*@
-        @*@Scripts.Render("~/bundles/jfirst")
-        @Scripts.Render("~/bundles/jquery")*@
-        
-         <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
-        <script src="~/Scripts/jquery.ui.touch-punch.min.js"></script>
-        <script src="~/Scripts/modernizr-2.7.1.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <script src="~/Scripts/jquery.slimscroll.min.js"></script>
-        <script src="~/Scripts/common.js"></script>
-        <script src="~/Scripts/holder.js"></script>
-        <script src="~/Scripts/jquery.uniform.min.js"></script>
-        <script src="~/Scripts/jquery.prettyPhoto.js"></script>
-        <script src="~/Scripts/bootstrap-select.js"></script>
-        <script src="~/Scripts/collapse.js"></script>
-        <script src="~/Scripts/twitter-bootstrap-hover-dropdown.min.js"></script>
-        <script src="~/Scripts/jquery.toggle.buttons.js"></script>
-        <script src="~/Scripts/jasny-bootstrap.min.js"></script>
-        <script src="~/Scripts/bootstrap-fileupload.js"></script>
-        <script src="~/Scripts/bootbox.js"></script>
-        <script src="~/Scripts/wysihtml5-0.3.0_rc2.min.js"></script>
-        <script src="~/Scripts/prettify.js"></script>
-        <script src="~/Scripts/jquery.gritter.min.js"></script>
-        <script src="~/Scripts/jquery.notyfy.js"></script>
-        <script src="~/Scripts/jquery.miniColors.js"></script>
-        <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-        <script src="~/Scripts/jquery.cookie.js"></script>
-        <script src="~/Scripts/themer.js"></script>
-        <script src="~/Scripts/twitter.js"></script>
-        <script src="~/Scripts/jquery.easy-pie-chart.js"></script>
-        <script src="~/Scripts/jquery.sparkline.min.js"></script>
-        <script src="~/Scripts/jquery.ba-resize.js"></script>
-        <script src="~/Scripts/index.js"></script>
-        <script src="~/Scripts/jquery.flot.js"></script>
-        <script src="~/Scripts/jquery.flot.orderBars.js"></script>
-        <script src="~/Scripts/jquery.flot.pie.js"></script>
-        <script src="~/Scripts/jquery.flot.resize.js"></script>
-        <script src="~/Scripts/jquery.flot.selection.js"></script>
-        <script src="~/Scripts/jquery.flot.tooltip.js"></script>
-        <script src="~/Scripts/resizable.js"></script>
-        <script src="~/Scripts/load-image.min.js"></script>
-        <script src="~/Scripts/bootstrap-image-gallery.min.js"></script>
-
-        <script>
-            $('.hasSubmenu').click(function () {
-                $('.collapse').css('display', 'none');
-                $('.hasSubmenu').css('height', '39px');
-                $(this).css('height', 'auto');
-                $(this).find('.collapse').css('display', 'block');
-            });
-        </script>
-        
-        <script src="~/Scripts/jsoncalls.js"></script>
-        @RenderSection("scripts", required: false )
-        <!-- Global -->
-        <script>
-            var basePath = '../Content/';
-        </script>
-
-        <!-- Colors -->
-        <script>
-            var primaryColor = '#e25f39',
-                dangerColor = '#bd362f',
-                successColor = '#609450',
-                warningColor = '#ab7a4b',
-                inverseColor = '#45484d';
-        </script>
-
-        <!-- Themer -->
-        <script>
-            var themerPrimaryColor = primaryColor;
-        </script>
-        
-
-       
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
 
-      
+    <section>
 
-       
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>{</span> HSoG <span>}</span></h1>
+            </div><!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <img alt="" src="images/photos/loggeduser.png" class="media-object">
+                        <div class="media-body">
+                            <h4>Welcome</h4>
+                            <span>"Life is so..."</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">Account</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <li><a href=""><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                        <li><a href=""><i class="fa fa-cog"></i> <span>Account Settings</span></a></li>
+                        <li><a href=""><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
+                        <li>@Html.Partial("_LoginPartial")</li>
+                    </ul>
+                </div>
+
+                <h5 class="sidebartitle">Navigation</h5>
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li><a><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                    <li class="nav-parent nav-active active">
+                        <a href=""><i class="fa fa-users"></i> <span>Membership</span></a>
+                        <ul class="children" style="display:block">
+                            <li><a href="~/Members/"><i class="fa fa-caret-right"></i> Members List</a></li>
+                            <li><a href="~/ChoirSplits/Reshuffle/"><i class="fa fa-caret-right"></i> Split Management</a></li>
+                            <li><a href="~/FriendshipGroups/Reshuffle/"><i class="fa fa-caret-right"></i> Friendship Mgt</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-parent">
+                        <a href=""><i class="icon icon-xing"></i> <span>Wardrobe</span></a>
+                    </li>
+                    <li><a href="tables.html"><i class="fa fa-briefcase"></i> <span>Finance</span></a></li>
+                    <li><a href="maps.html"><i class="fa fa-map-marker"></i> <span>Maps</span></a></li>
+                    <li class="nav-parent">
+                        <a href=""><i class="icon icon-file-pdf"></i> <span>Reports</span></a>
+                        <ul class="children">
+                            <li><a href="~/Reports/"><i class="fa fa-caret-right"></i> Members' Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a href="layouts.html"><i class="icon icon-settings"></i> <span>Settings</span></a>
+                        <ul class="children">
+                            <li><a href="~/Academy/"><i class="fa fa-caret-right"></i> Academy</a></li>
+                            <li><a href="~/ChoirParts/"><i class="fa fa-caret-right"></i> Choir Parts</a></li>
+                            <li><a href="~/ChoirSplits/"><i class="fa fa-caret-right"></i> Choir Splits</a></li>
+                            <li><a href="~/Availability/"><i class="fa fa-caret-right"></i> Availability</a></li>
+                            <li><a href="~/FriendshipGroups/"><i class="fa fa-caret-right"></i> Friendship</a></li>
+                            <li><a href="~/Occupations/"><i class="fa fa-caret-right"></i> Occupations</a></li>
+                            <li><a href="~/Posts/"><i class="fa fa-caret-right"></i> Positions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+            </div><!-- leftpanelinner -->
+        </div><!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+                <div class="header-left">
+                    <h4 style="padding-left:10px"> The Healing Streams of God, Daystar Christian Center.</h4>
+                </div>
+                <!-- header-right -->
+
+
+            </div><!-- headerbar -->
+
+
+            <div class="contentpanel">
+                @RenderBody()
+                <hr />
+
+            </div>
+            <footer class="clearfix">
+                <div class="pull-left">&copy; @DateTime.Now.Year - HSoG&reg; v3 - All rights Reserved. </div>
+                <div class="pull-right"><i class="icon icon-checkbox-checked"></i> M-i-N (Made In Nigeria) by - <a>Technical Team, The Healing Streams of God, Daystar Christian Center.</a>.</div>
+            </footer>
+        </div><!-- mainpanel -->
+
+        
+    </section>
+
+    @Scripts.Render("~/bundles/bracket")
+
+    @RenderSection("scripts", required: false)
+
+
+
+
+
 </body>
 </html>

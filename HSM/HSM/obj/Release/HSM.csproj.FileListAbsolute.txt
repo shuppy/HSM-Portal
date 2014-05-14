@@ -62,3 +62,4 @@ C:\Projects\HSM Portal\HSM\HSM\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Projects\HSM Portal\HSM\HSM\obj\Release\HSM.csprojResolveAssemblyReference.cache
 C:\Projects\HSM Portal\HSM\HSM\obj\Release\HSM.dll
 C:\Projects\HSM Portal\HSM\HSM\obj\Release\HSM.pdb
+C:\Projects\HSM Portal\HSM\HSM\bin\WebActivatorEx.dll

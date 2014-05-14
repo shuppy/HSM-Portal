@@ -18,10 +18,10 @@
 <section class="panel panel-primary panel-alt">
     <div class="panel-heading">
         <div class="panel-title" >
-            <h2>
+            <h4>
                 @ViewBag.Title
-                <a role="button" class="btn btn-primary pull-right" href="@Url.Action("create")">Create New</a>
-            </h2>
+                <a role="button" class="btn btn-default pull-right" href="@Url.Action("create")">Create New</a>
+            </h4>
         </div>
         <p>
             @if (TempData["error"] != null)
